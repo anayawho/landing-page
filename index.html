@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-/* ======================= General Animations ======================= */
+/* ----------------- General Animations ----------------- */
 @keyframes shimmer { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
 .shimmer { animation: shimmer 1.5s infinite; }
 
@@ -17,7 +17,7 @@
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 .animate-pulse-hero { animation: pulse 2s infinite; }
 
-/* ======================= Page Background ======================= */
+/* ----------------- Page Background ----------------- */
 body {
 background: url('https://i.ibb.co/7X9Y4nF/snow-bg.png') repeat;
 background-size: cover;
@@ -25,13 +25,13 @@ font-family: 'Roboto', sans-serif;
 overflow-x: hidden;
 }
 
-/* ======================= Colors ======================= */
+/* ----------------- Colors ----------------- */
 .walmart-blue { color: #0071CE; }
 .walmart-yellow { color: #FFC220; }
-.light-yellow-step { background-color: #FFF9C4; } /* light yellow for steps */
+.light-yellow-step { background-color: #FFF9C4; } /* light yellow steps */
 .neon-yellow { color: #FFC220; text-shadow: 0 0 10px #FFC220, 0 0 20px #FFC220; }
 
-/* ======================= Popups ======================= */
+/* ----------------- Popups ----------------- */
 .popup {
 position: fixed;
 bottom: 20px;
@@ -58,10 +58,9 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ======================= STEPS + PROGRESS + CTA ======================= -->
+<!-- ======================= STEPS ======================= -->
 <section class="py-12 px-4 bg-gradient-to-br from-blue-700 to-green-600 text-white relative">
 <div class="max-w-6xl mx-auto text-center">
-<!-- Steps -->
 <div class="grid md:grid-cols-3 gap-6 mb-6">
 <div class="p-6 rounded-2xl shadow-lg light-yellow-step text-black">
 <p class="font-bold text-lg mb-2">Step 1</p>
@@ -77,16 +76,7 @@ opacity: 0;
 </div>
 </div>
 
-<!-- Progress / Loyalty Section -->
-<div class="bg-white text-black rounded-3xl p-6 max-w-3xl mx-auto mb-6 shadow-lg">
-<p class="font-semibold mb-2">Progress: Claimed 3 of 5 steps</p>
-<p class="mb-4">Only 2 steps left to get <span class="font-bold">$1300 gift card</span></p>
-<div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-<div class="bg-yellow-400 h-4 rounded-full" style="width:60%; transition: width 1s;"></div>
-</div>
-</div>
-
-<!-- Click Here Button -->
+<!-- Click Here Button directly below steps -->
 <div class="mt-6">
 <a href="YOUR_LINK_HERE" class="inline-block bg-white text-neon-yellow font-bold px-8 py-4 rounded-3xl shadow-lg hover:shadow-2xl transition text-lg">
 Click Here →
@@ -118,6 +108,17 @@ Click Here →
 <section class="py-20 px-4 bg-white text-center">
 <h2 class="text-4xl font-bold mb-12">Recent Winners</h2>
 <div class="max-w-4xl mx-auto space-y-4 overflow-hidden" id="leaderboard"></div>
+</section>
+
+<!-- ======================= PROGRESS / LOYALTY BELOW LEADERBOARD ======================= -->
+<section class="py-12 px-4 bg-gray-50 text-center">
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-3xl shadow-lg">
+<p class="font-semibold mb-2">Progress: Sarah Claimed 3 of 5 steps</p>
+<p class="mb-4">Only 2 steps left to get <span class="font-bold">$1300 gift card</span></p>
+<div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+<div class="bg-yellow-400 h-4 rounded-full" style="width:60%; transition: width 1s;"></div>
+</div>
+</div>
 </section>
 
 <!-- ======================= TESTIMONIALS ======================= -->
