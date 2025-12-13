@@ -47,30 +47,6 @@ animation: fall linear infinite;
 to { transform: translateY(110vh); }
 }
 
-/* Desktop overlay */
-#desktopLock {
-display: none;
-position: fixed;
-inset:0;
-background: var(--walmart-blue);
-color: var(--white);
-z-index: 9999;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-#desktopLock h2 {
-font-size:2rem;
-margin-bottom:12px;
-}
-#desktopLock p {
-font-size:1.1rem;
-opacity:0.85;
-line-height:1.6;
-}
-
 /* Container */
 .container {
 position: relative;
@@ -216,14 +192,6 @@ margin-bottom:30px;
 
 <body>
 
-<!-- Desktop lock overlay -->
-<div id="desktopLock">
-<div>
-<h2>Mobile Access Required</h2>
-<p>This holiday event is only available on mobile devices. Please open this page on your smartphone to claim your gift card.</p>
-</div>
-</div>
-
 <!-- Snow container -->
 <div class="snow" id="snow"></div>
 
@@ -269,11 +237,6 @@ Sign up using your email and basic information, then complete the recommended de
 </div>
 
 <script>
-// Desktop lock
-if(window.innerWidth > 768){
-document.getElementById('desktopLock').style.display = 'flex';
-}
-
 // Snow generation
 const snowContainer = document.getElementById('snow');
 for(let i=0;i<80;i++){
