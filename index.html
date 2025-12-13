@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holiday Walmart Gift Card</title>
+<style>
+/* Reset & basic styling */
+body, html {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background: #f0f8ff;
+color: #003087; /* Walmart Blue */
+}
+header {
+text-align: center;
+padding: 40px 20px;
+background: linear-gradient(to bottom, #fef9e7, #fff);
+position: relative;
+}
+h1 {
+color: #003087;
+font-size: 2em;
+margin-bottom: 10px;
+}
+ol {
+text-align: left;
+display: inline-block;
+margin-bottom: 20px;
+}
+.cta-button {
+display: inline-block;
+padding: 15px 30px;
+background-color: #ffb612; /* Walmart Yellow */
+color: #003087;
+text-decoration: none;
+font-weight: bold;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+.cta-button:hover {
+background-color: #ffc845;
+}
+/* Sections */
+section {
+padding: 30px 20px;
+text-align: center;
+}
+.leaderboard, .comments, .stats, .faq {
+background: #fff;
+margin: 20px auto;
+padding: 20px;
+border-radius: 12px;
+max-width: 500px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+h2 {
+color: #003087;
+margin-bottom: 15px;
+}
+/* Stats */
+.stat-item {
+display: flex;
+justify-content: space-between;
+margin: 10px 0;
+font-weight: bold;
+font-size: 1.1em;
+}
+/* FAQ */
+.faq-item {
+text-align: left;
+margin: 10px 0;
+}
+.faq-item h3 {
+margin: 0 0 5px 0;
+}
+/* Footer */
+footer {
+text-align: center;
+padding: 20px;
+background-color: #003087;
+color: #fff;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+}
+/* Mobile-only overlay for desktop users */
+#desktop-overlay {
+display: none;
+position: fixed;
+top:0; left:0;
+width: 100%; height: 100%;
+background: #003087;
+color: #fff;
+z-index: 9999;
+text-align: center;
+padding-top: 40vh;
+font-size: 1.5em;
+}
+</style>
+</head>
+<body>
+<!-- Mobile-only overlay -->
+<div id="desktop-overlay">
+<p>Please claim your Gift Card from your mobile device!</p>
+</div>
+
+<header>
+<div class="hero">
+<h1>Want to claim your Walmart Gift Card?</h1>
+<p>Follow these 3 easy steps:</p>
+<ol>
+<li>Complete surveys</li>
+<li>Enter email & basic info</li>
+<li>Complete the recommended deals</li>
+</ol>
+<a href="https://trkio.org/aff_c?offer_id=1525&aff_id=64120" class="cta-button">Click Here</a>
+</div>
+</header>
+
+<!-- Leaderboard -->
+<section class="leaderboard">
+<h2>Top Participants</h2>
+<ul id="leaderboard-list">
+<li>Anna – 5 Gift Cards</li>
+<li>John – 3 Gift Cards</li>
+<li>Maria – 2 Gift Cards</li>
+</ul>
+</section>
+
+<!-- Comments feed -->
+<section class="comments">
+<h2>What people are saying</h2>
+<ul id="comments-list">
+<li>"I just got my Walmart Gift Card after completing 5 deals!"</li>
+<li>"Claimed mine instantly, super easy!"</li>
+<li>"Love this holiday promo, so fun!"</li>
+</ul>
+</section>
+
+<!-- Gift Card Stats -->
+<section class="stats">
+<h2>Gift Card Stats</h2>
+<div class="stat-item">
+<p>Gift Cards Claimed Today:</p>
+<span id="claimed-today">387</span>
+</div>
+<div class="stat-item">
+<p>Active Participants:</p>
+<span id="active-participants">1,245</span>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What do I need to do to claim the Gift Card?</h3>
+<p>Sign up, provide your email & basic info, then complete the recommended deals.</p>
+</div>
+</section>
+
+<!-- Trusted & Secure -->
+<footer>
+<div class="trust">
+<p>✅ Trusted & Secure</p>
+<p>✅ Safe & Easy to Use</p>
+<p>🎄 Happy Holidays!</p>
+</div>
+</footer>
+
+<script>
+// Mobile-only detection
+if (window.innerWidth > 768) {
+document.body.style.display = "none";
+document.getElementById("desktop-overlay").style.display = "block";
+}
+
+// Animate gift card stats
+let claimedToday = document.getElementById("claimed-today");
+let activeParticipants = document.getElementById("active-participants");
+
+function animateCounter(element, target) {
+let count = 0;
+let step = Math.ceil(target / 100);
+let interval = setInterval(() => {
+count += step;
+if (count >= target) {
+count = target;
+clearInterval(interval);
+}
+element.textContent = count.toLocaleString();
+}, 20);
+}
+
+animateCounter(claimedToday, 387);
+animateCounter(activeParticipants, 1245);
+
+// Add dynamic comments
+const commentsList = document.getElementById("comments-list");
+const newComments = [
+"I just claimed my Gift Card – so fast!",
+"Holiday deal is amazing!",
+"Easy and fun to participate!"
+];
+let i = 0;
+setInterval(() => {
+const li = document.createElement("li");
+li.textContent = newComments[i % newComments.length];
+commentsList.appendChild(li);
+if(commentsList.children.length > 5) commentsList.removeChild(commentsList.children[0]);
+i++;
+}, 4000);
+</script>
+</body>
+  </html>
