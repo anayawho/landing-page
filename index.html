@@ -233,7 +233,7 @@ leaderboardEl.appendChild(div);
 updateLeaderboard();
 setInterval(updateLeaderboard,1500);
 
-// Popups
+// Popups - stay 2 sec, next every 2.5 sec
 const popupEl=document.getElementById('popup');
 function showPopup(){
 const name=winners[Math.floor(Math.random()*winners.length)];
@@ -241,8 +241,9 @@ const reward=rewards[Math.floor(Math.random()*rewards.length)];
 popupEl.textContent=`${name} just got ${reward}!`;
 popupEl.style.right='20px';
 popupEl.style.opacity=1;
-setTimeout(()=>{popupEl.style.right='-350px';popupEl.style.opacity=0;},3000);
+setTimeout(()=>{popupEl.style.right='-350px';popupEl.style.opacity=0;},2000);
 }
+showPopup();
 setInterval(showPopup,2500);
 
 // Snowflakes
@@ -264,8 +265,8 @@ function calculateReward(){
 const steps = parseInt(document.getElementById('stepsInput').value);
 let reward = 0;
 if(steps >=1 && steps <=25){
-reward = Math.round((steps / 25) * 5000); // Steps 1-25 map to $50-$5000
-if(steps === 1) reward = 50; // Step 1 fixed
+reward = Math.round((steps / 25) * 5000);
+if(steps === 1) reward = 50;
 document.getElementById('rewardResult').textContent = `Estimated Reward: $${reward}`;
 } else {
 document.getElementById('rewardResult').textContent = "Please enter a value between 1 and 25";
