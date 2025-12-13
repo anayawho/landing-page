@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Walmart Gift Card Giveaway</title>
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 /* Animations */
@@ -16,37 +14,39 @@
 @keyframes sparkle { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
 .sparkle { animation: sparkle 1s ease-out; }
 
-body { background: url('https://i.ibb.co/7X9Y4nF/snow-bg.png') repeat; background-size: cover; }
+body { background: url('https://i.ibb.co/7X9Y4nF/snow-bg.png') repeat; background-size: cover; font-family: 'Roboto', sans-serif; }
 .walmart-blue { color: #0071CE; }
 .walmart-yellow { color: #FFC220; }
+.hero-bg { background: linear-gradient(135deg, #FF4C4C, #0071CE, #22C55E); }
 
-/* Hero gradient overlay */
-.hero-bg { background: linear-gradient(135deg, #0071CE 0%, #FFC220 100%); }
+/* Hero animation */
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.animate-pulse-hero { animation: pulse 2s infinite; }
 </style>
 </head>
-<body class="font-roboto relative overflow-x-hidden">
+<body class="relative overflow-x-hidden">
 
 <!-- Hero Section -->
-<section class="hero-bg text-white py-16 px-4 relative overflow-hidden">
+<section class="hero-bg text-white py-16 px-4 relative overflow-hidden rounded-b-3xl">
 <div class="max-w-5xl mx-auto text-center">
-<h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-[pulse_2s_infinite]">🎉 Limited Time Walmart Gift Card Giveaway!</h1>
-<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Thousands of participants have already claimed their gift cards. Don’t miss your chance to get yours today. Fast, secure, and 100% verified.</p>
+<h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-pulse-hero">Limited Time Walmart Gift Card Giveaway!</h1>
+<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Thousands have already claimed their gift cards. Secure yours today with a fast, verified, and safe process.</p>
 
 <!-- Steps -->
 <div class="grid md:grid-cols-4 gap-6 mt-8">
-<div class="bg-white text-walmart-blue p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+<div class="p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 bg-red-600 text-white">
 <p class="font-bold text-lg mb-2">Step 1</p>
 <p>Answer a few short surveys to help us understand your preferences.</p>
 </div>
-<div class="bg-white text-walmart-blue p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+<div class="p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 bg-green-600 text-white">
 <p class="font-bold text-lg mb-2">Step 2</p>
 <p>Enter your email and basic details to secure your spot.</p>
 </div>
-<div class="bg-white text-walmart-blue p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+<div class="p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 bg-yellow-500 text-white">
 <p class="font-bold text-lg mb-2">Step 3</p>
 <p>Complete our recommended deals and unlock instant rewards.</p>
 </div>
-<div class="bg-yellow-400 text-walmart-blue p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer">
+<div class="p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 bg-blue-700 text-white cursor-pointer">
 <a href="#" class="font-bold text-lg">Claim Your Gift Card Now →</a>
 </div>
 </div>
@@ -129,19 +129,19 @@ body { background: url('https://i.ibb.co/7X9Y4nF/snow-bg.png') repeat; backgroun
 <section class="py-16 px-4 bg-white text-center">
 <h2 class="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
 <div class="max-w-3xl mx-auto space-y-4 text-left">
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-walmart-blue transition">
+<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-red-600 transition">
 <p class="font-bold text-lg mb-2">Is my information secure?</p>
 <p class="faq-content hidden text-gray-700">All personal information is encrypted and securely stored. We never share your data.</p>
 </div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-walmart-blue transition">
+<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-green-600 transition">
 <p class="font-bold text-lg mb-2">How do I claim my gift card?</p>
 <p class="faq-content hidden text-gray-700">Follow the 3 steps above and click "Claim Your Gift Card Now" to receive it instantly.</p>
 </div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-walmart-blue transition">
+<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-yellow-500 transition">
 <p class="font-bold text-lg mb-2">Is this offer legitimate?</p>
 <p class="faq-content hidden text-gray-700">Yes. Thousands have claimed their gift cards successfully. Fully verified and genuine.</p>
 </div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-walmart-blue transition">
+<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-blue-700 transition">
 <p class="font-bold text-lg mb-2">Can I participate on any device?</p>
 <p class="faq-content hidden text-gray-700">Absolutely. Our landing page is fully responsive and optimized for all devices.</p>
 </div>
