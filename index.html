@@ -14,49 +14,48 @@
 --white:#ffffff;
 --soft-white:rgba(255,255,255,0.85);
 }
-
 /* Base */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,var(--blue-dark),var(--blue-mid));color:var(--white);overflow-x:hidden;position:relative;}
 a{text-decoration:none;color:inherit;}
-.container{max-width:1200px;margin:auto;position:relative;z-index:2;padding:0 20px;}
-
-/* Canvas background for snow + ornaments */
 canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+.container{max-width:1200px;margin:auto;padding:0 20px;position:relative;z-index:2;}
 
 /* Hero */
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;z-index:2;}
-.hero h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:25px;line-height:1.3;}
-.cta-btn{display:inline-block;padding:16px 50px;font-size:1.2rem;font-weight:700;color:var(--blue-dark);background:linear-gradient(135deg,var(--yellow-light),var(--yellow-dark));border-radius:25px;box-shadow:0 15px 35px rgba(255,182,18,0.35);transition:all 0.3s;margin-bottom:50px;}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:60px 20px;position:relative;z-index:2;}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.4rem;margin-bottom:25px;line-height:1.3;}
+.cta-btn{display:inline-block;padding:18px 50px;font-size:1.25rem;font-weight:700;color:var(--blue-dark);background:linear-gradient(135deg,var(--yellow-light),var(--yellow-dark));border-radius:25px;box-shadow:0 15px 35px rgba(255,182,18,0.35);transition:all 0.3s;margin-bottom:50px;}
 .cta-btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(255,204,0,0.6),0 0 50px rgba(255,220,50,0.4);}
 
-/* Steps Section */
-.steps-section{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:60px;}
-.step-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);padding:25px;border-radius:20px;flex:1 1 250px;max-width:300px;position:relative;transition:all 0.3s;}
-.step-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(255,182,18,0.25);}
+/* Steps */
+.steps-section{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-bottom:60px;}
+.step-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);padding:25px;border-radius:20px;flex:1 1 250px;max-width:300px;position:relative;transition:all 0.3s;transform:skewY(-2deg);}
+.step-card:hover{transform:translateY(-8px) skewY(-2deg);box-shadow:0 10px 30px rgba(255,182,18,0.25);}
 .step-number{width:50px;height:50px;background:var(--yellow-dark);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:700;margin-bottom:15px;color:var(--blue-dark);}
 .step-text{font-weight:600;font-size:1.05rem;}
 
 /* Stats Section */
 .stats-section{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin:80px 0;}
-.stat-card{flex:1 1 180px;max-width:220px;background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border-radius:20px;padding:20px;text-align:center;position:relative;}
+.stat-card{flex:1 1 180px;max-width:220px;background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border-radius:20px;padding:20px;text-align:center;position:relative;transition:transform 0.3s;}
+.stat-card:hover{transform:scale(1.05);}
 .stat-icon{font-size:2rem;margin-bottom:10px;display:block;color:var(--yellow-light);}
 .stat-number{font-size:1.8rem;font-weight:700;color:var(--yellow-light);}
 .stat-label{font-size:1rem;color:var(--soft-white);}
 
-/* Leaderboard Section */
+/* Leaderboard */
 .leaderboard-section{position:relative;overflow:hidden;margin:80px 0;padding:20px 0;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border-radius:25px;}
-.leaderboard-track{display:flex;gap:15px;animation:scrollLeaderboard 20s linear infinite;}
-.leaderboard-card{min-width:160px;background:rgba(255,255,255,0.07);padding:12px;border-radius:15px;display:flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.leaderboard-track{display:flex;gap:15px;animation:scrollLeaderboard 25s linear infinite;}
+.leaderboard-card{min-width:160px;background:rgba(255,255,255,0.07);padding:12px;border-radius:15px;display:flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(0,0,0,0.2);transition:transform 0.3s;}
+.leaderboard-card:hover{transform:translateY(-5px);}
 .avatar{width:36px;height:36px;border-radius:50%;background:var(--yellow-dark);color:var(--blue-dark);display:flex;justify-content:center;align-items:center;font-weight:700;}
 @keyframes scrollLeaderboard{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
 
 /* Testimonials */
-.testimonials-section{position:relative;margin:80px 0;max-width:900px;height:160px;perspective:1000px;margin-left:auto;margin-right:auto;}
-.testimonial-card{position:absolute;width:100%;height:140px;background:rgba(255,255,255,0.07);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 15px 35px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-style:italic;font-weight:600;font-size:1rem;color:var(--white);opacity:0;transform:rotateY(30deg);}
+.testimonials-section{position:relative;margin:80px 0;max-width:900px;height:180px;perspective:1000px;margin-left:auto;margin-right:auto;}
+.testimonial-card{position:absolute;width:100%;height:160px;background:rgba(255,255,255,0.07);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 15px 35px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-style:italic;font-weight:600;font-size:1rem;color:var(--white);opacity:0;transform:rotateY(30deg);}
 .testimonial-card.active{opacity:1;transform:rotateY(0deg);transition:all 1s;}
 
-/* FAQ Section */
+/* FAQ */
 .faq-section{margin:80px 0;}
 .faq-card{background:rgba(255,255,255,0.07);padding:25px;border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 10px 25px rgba(0,0,0,0.25);}
 .faq-question{cursor:pointer;font-weight:700;color:var(--yellow-light);margin-bottom:10px;display:flex;align-items:center;}
@@ -66,14 +65,12 @@ canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;poi
 footer{margin-top:80px;text-align:center;font-size:.85rem;opacity:.9;padding:30px;background:rgba(0,0,0,0.2);backdrop-filter:blur(12px);border-radius:20px;}
 .trust-badge{display:inline-block;margin:0 10px;padding:6px 14px;background:rgba(255,255,255,0.1);border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,0.3);}
 
-/* Pop-ups */
+/* Popups */
 .pop-up{position:fixed;bottom:20px;left:20px;background:rgba(0,0,0,0.85);padding:12px 18px;border-radius:18px;color:#fff;font-size:0.95rem;box-shadow:0 6px 20px rgba(0,0,0,0.4);opacity:0;transform:translateY(20px);transition:all 0.5s;}
 </style>
 </head>
 <body>
-
 <canvas id="bgCanvas"></canvas>
-
 <div class="container">
 
 <!-- Hero -->
@@ -104,15 +101,21 @@ footer{margin-top:80px;text-align:center;font-size:.85rem;opacity:.9;padding:30p
 <div class="leaderboard-card"><div class="avatar">S</div>Sarah CA $800</div>
 <div class="leaderboard-card"><div class="avatar">L</div>Liam FL $750</div>
 <div class="leaderboard-card"><div class="avatar">E</div>Emma NY $1200</div>
+<div class="leaderboard-card"><div class="avatar">O</div>Olivia TX $1100</div>
+<div class="leaderboard-card"><div class="avatar">N</div>Noah NY $900</div>
+<div class="leaderboard-card"><div class="avatar">S</div>Sophia CA $680</div>
+<div class="leaderboard-card"><div class="avatar">J</div>Jackson FL $1020</div>
+<div class="leaderboard-card"><div class="avatar">A</div>Aiden TX $800</div>
 </div>
 </div>
 
 <!-- Testimonials -->
 <div class="testimonials-section">
-<div class="testimonial-card active">"I got my gift card in minutes! Highly recommend!"</div>
-<div class="testimonial-card">"Super easy and fast, loved it!"</div>
-<div class="testimonial-card">"Received my gift card instantly!"</div>
-<div class="testimonial-card">"Best holiday promo ever!"</div>
+<div class="testimonial-card active">"I got my gift card in minutes! Highly recommend!" - <b>Anna, NY</b> $1200</div>
+<div class="testimonial-card">"Super easy and fast, loved it!" - <b>Mark, TX</b> $950</div>
+<div class="testimonial-card">"Received my gift card instantly!" - <b>Olivia, TX</b> $1100</div>
+<div class="testimonial-card">"Best holiday promo ever!" - <b>Noah, NY</b> $900</div>
+<div class="testimonial-card">"Fast and secure process!" - <b>Sophia, CA</b> $680</div>
 </div>
 
 <!-- FAQ -->
@@ -129,17 +132,14 @@ footer{margin-top:80px;text-align:center;font-size:.85rem;opacity:.9;padding:30p
 </div>
 </div>
 
-<!-- CTA Reminder -->
 <a class="cta-btn" href="https://trkfy.org/aff_c?offer_id=1525&aff_id=64120">Claim Your Gift Card Now</a>
 
-<!-- Footer -->
 <footer>
 <span class="trust-badge">SSL Secure</span>
 <span class="trust-badge">Encrypted</span>
 <span class="trust-badge">Verified</span>
 </footer>
 
-<!-- Popups -->
 <div class="pop-up" id="pop1"></div>
 <div class="pop-up" id="pop2"></div>
 
@@ -147,7 +147,7 @@ footer{margin-top:80px;text-align:center;font-size:.85rem;opacity:.9;padding:30p
 // Canvas snow
 const canvas=document.getElementById('bgCanvas');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;const particles=[];for(let i=0;i<120;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+1,speed:Math.random()*1+0.2});}function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let p of particles){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,2*Math.PI);ctx.fillStyle='rgba(255,255,255,0.15)';ctx.fill();p.y+=p.speed;if(p.y>canvas.height){p.y=-10;p.x=Math.random()*canvas.width;}}requestAnimationFrame(draw);}draw();window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 
-// Stats animation
+// Stats
 function animateCounter(id,target){let count=0;const el=document.getElementById(id);const step=Math.ceil(target/100);const interval=setInterval(()=>{count+=step;if(count>=target){count=target;clearInterval(interval);}el.textContent=count.toLocaleString();},20);}
 animateCounter('claimed',387);animateCounter('active',1245);animateCounter('completed',5432);
 
@@ -159,10 +159,9 @@ document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click
 
 // Pop-ups
 const pop1=document.getElementById('pop1');const pop2=document.getElementById('pop2');
-const messages=[{name:"Liam",location:"FL",reward:"$750"},{name:"Emma",location:"NY",reward:"$1200"},{name:"Noah",location:"NY",reward:"$900"},{name:"Olivia",location:"TX",reward:"$1150"},{name:"Sophia",location:"CA",reward:"$680"}];
-setInterval(()=>{const msg=messages[Math.floor(Math.random()*messages.length)];pop1.textContent=`${msg.name} from ${msg.location} claimed ${msg.reward}`;pop1.style.opacity='1';pop1.style.transform='translateY(0)';setTimeout(()=>{pop1.style.opacity='0';pop1.style.transform='translateY(20px)';},2500);},4000);
-setInterval(()=>{const msg=messages[Math.floor(Math.random()*messages.length)];pop2.textContent=`${msg.name} from ${msg.location} claimed ${msg.reward}`;pop2.style.opacity='1';pop2.style.transform='translateY(0)';setTimeout(()=>{pop2.style.opacity='0';pop2.style.transform='translateY(20px)';},5500);},5500);
+const messages=[{name:"Liam",location:"FL",reward:"$750"},{name:"Emma",location:"NY",reward:"$1200"},{name:"Noah",location:"NY",reward:"$900"},{name:"Olivia",location:"TX",reward:"$1150"},{name:"Sophia",location:"CA",reward:"$680"},{name:"Aiden",location:"TX",reward:"$800"},{name:"Jackson",location:"FL",reward:"$1020"}];
+setInterval(()=>{const msg=messages[Math.floor(Math.random()*messages.length)];pop1.textContent=`${msg.name} from ${msg.location} claimed ${msg.reward}`;pop1.style.opacity='1';pop1.style.transform='translateY(0)';setTimeout(()=>{pop1.style.opacity='0';pop1.style.transform='translateY(20px)';},2500);},3000);
+setInterval(()=>{const msg=messages[Math.floor(Math.random()*messages.length)];pop2.textContent=`${msg.name} from ${msg.location} claimed ${msg.reward}`;pop2.style.opacity='1';pop2.style.transform='translateY(0)';setTimeout(()=>{pop2.style.opacity='0';pop2.style.transform='translateY(20px)';},4500);},4500);
 </script>
-
 </body>
 </html>
