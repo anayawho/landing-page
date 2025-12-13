@@ -7,79 +7,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
---primary-blue:#003087;
---primary-yellow:#ffb612;
+--blue-dark:#002e5d;
+--blue-medium:#0044a2;
+--yellow-light:#ffcc00;
+--yellow-dark:#ffb900;
 --white:#ffffff;
 --soft-white:rgba(255,255,255,0.85);
---accent-light:rgba(255,182,18,0.2);
---card-bg:rgba(255,255,255,0.08);
---card-shadow:rgba(0,0,0,0.3);
+--card-bg:rgba(255,255,255,0.07);
+--shadow:rgba(0,0,0,0.3);
 }
-/* Base */
+/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:'Montserrat',sans-serif;
-background: linear-gradient(180deg,#001f50 0%,#002a70 100%);
-color: var(--white);
-overflow-x:hidden;
-position:relative;
-}
-.container{
-max-width:1100px;
-margin:auto;
-padding:80px 20px 100px;
-text-align:center;
-}
+body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,var(--blue-dark),var(--blue-medium));color:var(--white);overflow-x:hidden;position:relative;}
+.container{max-width:1200px;margin:auto;padding:80px 20px 150px;text-align:center;position:relative;z-index:2;}
+h1.hero-title{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:20px;line-height:1.2;}
+.cta-btn{display:inline-block;margin:30px auto;padding:18px 55px;font-size:1.3rem;font-weight:700;color:var(--blue-dark);background:linear-gradient(135deg,var(--yellow-light),var(--yellow-dark));border-radius:25px;text-decoration:none;box-shadow:0 15px 35px rgba(255,182,18,0.35);transition:all 0.3s;}
+.cta-btn:hover{transform:scale(1.05);box-shadow:0 0 30px var(--yellow-light),0 0 50px rgba(255,220,50,0.4);}
 
-/* Hero */
-h1.hero-title{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:15px;line-height:1.2;}
-.steps-card{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;margin:40px 0;}
-.step{background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:30px;width:220px;transition:transform 0.3s, box-shadow 0.3s;cursor:default;}
-.step:hover{transform: translateY(-5px);box-shadow:0 10px 25px var(--accent-light);}
-.step-number{width:50px;height:50px;margin:0 auto 10px;background:var(--primary-yellow);color:var(--primary-blue);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:700;font-size:1.2rem;}
+/* Steps */
+.steps-card{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;margin:50px 0;}
+.step{background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:30px;width:220px;transition:transform 0.3s, box-shadow 0.3s;}
+.step:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(255,182,18,0.2);}
+.step-number{width:50px;height:50px;margin:0 auto 10px;background:var(--yellow-dark);color:var(--blue-dark);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:700;font-size:1.2rem;}
 .step-text{font-weight:600;font-size:1rem;}
 
-/* CTA */
-.cta-btn{display:inline-block;margin:0 auto 70px;padding:18px 55px;font-size:1.3rem;font-weight:700;color:var(--primary-blue);background:linear-gradient(135deg,var(--primary-yellow),#ffd55a);border-radius:25px;text-decoration:none;box-shadow:0 15px 35px rgba(255,182,18,0.35);transition:all 0.3s;}
-.cta-btn:hover{transform:scale(1.05);box-shadow:0 0 30px var(--primary-yellow),0 0 50px rgba(255,220,50,0.4);}
-
-/* Stats Grid */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;margin:60px 0;}
-.stat-card{background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:25px;box-shadow:0 8px 25px var(--card-shadow);transition:transform 0.3s;}
-.stat-card:hover{transform: translateY(-5px);}
-.stat-card svg{width:28px;height:28px;margin-bottom:10px;fill:var(--primary-yellow);}
-.stat-card strong{display:block;font-size:2rem;margin-bottom:5px;color:var(--primary-yellow);}
+/* Stats Section */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin:60px 0;}
+.stat-card{background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:25px;box-shadow:0 8px 25px var(--shadow);transition:transform 0.3s;}
+.stat-card:hover{transform:translateY(-5px);}
+.stat-card strong{display:block;font-size:2rem;margin-bottom:6px;color:var(--yellow-light);}
+.stat-icon{width:28px;height:28px;margin:0 auto 10px;fill:var(--yellow-light);}
 
 /* Leaderboard */
-.leaderboard{margin:60px 0;background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:30px;box-shadow:0 8px 25px var(--card-shadow);}
-.leaderboard h3{margin-bottom:20px;font-size:1.5rem;color:var(--primary-yellow);}
+.leaderboard{margin:60px 0;background:var(--card-bg);backdrop-filter:blur(12px);border-radius:20px;padding:30px;box-shadow:0 8px 25px var(--shadow);}
+.leaderboard h3{margin-bottom:20px;font-size:1.6rem;color:var(--yellow-light);}
 .leaderboard ul{list-style:none;padding:0;}
-.leaderboard li{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.05);padding:12px 15px;margin-bottom:10px;border-radius:15px;transition:all 0.3s;}
-.leaderboard li .avatar{width:36px;height:36px;border-radius:50%;background:var(--primary-yellow);color:var(--primary-blue);display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:12px;flex-shrink:0;}
-.leaderboard li:hover{transform:translateY(-3px);box-shadow:0 6px 15px var(--accent-light);}
+.leaderboard li{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.05);padding:14px 18px;margin-bottom:12px;border-radius:15px;transition:all 0.3s;}
+.leaderboard li .avatar{width:36px;height:36px;border-radius:50%;background:var(--yellow-dark);color:var(--blue-dark);display:flex;align-items:center;justify-content:center;font-weight:700;margin-right:12px;flex-shrink:0;}
+.leaderboard li:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(255,182,18,0.2);}
 
 /* Testimonials */
-.testimonials{margin:60px auto;padding:30px;background:var(--card-bg);border-radius:20px;backdrop-filter:blur(12px);font-style:italic;font-weight:600;font-size:1rem;color:var(--white);box-shadow:0 8px 20px var(--card-shadow);min-height:100px;transition:all 0.3s;}
+.testimonials{margin:60px auto;padding:35px;background:var(--card-bg);border-radius:20px;backdrop-filter:blur(12px);font-style:italic;font-weight:600;font-size:1rem;color:var(--white);box-shadow:0 8px 20px var(--shadow);min-height:120px;transition:all 0.3s;}
 .testimonials:hover{transform:translateY(-3px);}
 
 /* FAQ */
-.faq-card{margin:60px 0;text-align:left;background:var(--card-bg);padding:30px;border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 8px 25px var(--card-shadow);}
-.faq-question{cursor:pointer;font-weight:700;color:var(--primary-yellow);margin-bottom:10px;display:flex;align-items:center;}
+.faq-card{margin:60px 0;text-align:left;background:var(--card-bg);padding:30px;border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 8px 25px var(--shadow);}
+.faq-question{cursor:pointer;font-weight:700;color:var(--yellow-light);margin-bottom:10px;display:flex;align-items:center;}
 .faq-answer{display:none;color:var(--soft-white);margin-bottom:12px;transition:all 0.3s;}
 
 /* Footer */
-footer{margin-top:60px;text-align:center;font-size:.85rem;opacity:.9;padding:20px;}
-.trust-badge{display:inline-block;margin:0 10px;padding:6px 12px;background:rgba(255,255,255,0.1);border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,0.3);}
+footer{margin-top:80px;text-align:center;font-size:.85rem;opacity:.9;padding:30px;}
+.trust-badge{display:inline-block;margin:0 12px;padding:6px 14px;background:rgba(255,255,255,0.1);border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,0.3);}
 
 /* Pop-ups */
-.pop-up{position:fixed;bottom:25px;left:25px;background:rgba(0,0,0,0.85);padding:14px 20px;border-radius:18px;color:#fff;font-size:0.95rem;box-shadow:0 6px 20px rgba(0,0,0,0.4);opacity:0;transform: translateY(20px);transition: all 0.5s;}
+.pop-up{position:fixed;bottom:25px;left:25px;background:rgba(0,0,0,0.85);padding:14px 22px;border-radius:18px;color:#fff;font-size:0.95rem;box-shadow:0 6px 20px rgba(0,0,0,0.4);opacity:0;transform:translateY(20px);transition:all 0.5s;}
 
-/* Subtle particle background */
-.particle{position:fixed;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.2);top:-10px;animation:fall linear infinite;}
+/* Particle Background */
+.particle{position:fixed;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.15);top:-10px;animation:fall linear infinite;}
 @keyframes fall{0%{transform:translateY(0);}100%{transform:translateY(110vh);}}
 </style>
 </head>
 <body>
+
 <div class="container">
 <h1 class="hero-title">Want to claim your Walmart Gift Card? Complete the steps below:</h1>
 
@@ -92,22 +81,27 @@ footer{margin-top:60px;text-align:center;font-size:.85rem;opacity:.9;padding:20p
 
 <a class="cta-btn" href="https://trkfy.org/aff_c?offer_id=1525&aff_id=64120">Click Here</a>
 
-<!-- Stats -->
+<!-- Stats Section -->
 <div class="stats">
 <div class="stat-card">
-<svg viewBox="0 0 24 24"><path d="M12 2L15 8H9L12 2Z"/></svg>
+<svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 2L15 8H9L12 2Z"/></svg>
 <strong id="claimed">387</strong>
 Gift Cards Claimed
 </div>
 <div class="stat-card">
-<svg viewBox="0 0 24 24"><path d="M12 12C15.3 12 18 14.7 18 18H6C6 14.7 8.7 12 12 12Z"/></svg>
+<svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 12C15.3 12 18 14.7 18 18H6C6 14.7 8.7 12 12 12Z"/></svg>
 <strong id="active">1,245</strong>
 Active Participants
 </div>
 <div class="stat-card">
-<svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg>
+<svg class="stat-icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg>
 <strong id="completed">5,432</strong>
 Deals Completed
+</div>
+<div class="stat-card">
+<svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+<strong id="total">$12,340</strong>
+Total Rewards Distributed
 </div>
 </div>
 
@@ -134,8 +128,18 @@ Deals Completed
 <div class="faq-answer">Most claims are processed within minutes after completing all steps.</div>
 <div class="faq-question">Can I participate from any device?</div>
 <div class="faq-answer">Yes, the event works on mobile and tablet devices.</div>
+<div class="faq-question">Why participate now?</div>
+<div class="faq-answer">The holiday event has limited time rewards. Join today!</div>
+<div class="faq-question">Is it free?</div>
+<div class="faq-answer">Yes, participation is free and secure.</div>
+<div class="faq-question">How is privacy ensured?</div>
+<div class="faq-answer">All data is encrypted and never shared with third parties.</div>
 </div>
 
+<!-- CTA Reminder -->
+<a class="cta-btn" href="https://trkfy.org/aff_c?offer_id=1525&aff_id=64120">Claim Your Gift Card Now</a>
+
+<!-- Footer -->
 <footer>
 <span class="trust-badge">SSL Secure</span>
 <span class="trust-badge">Encrypted</span>
@@ -148,8 +152,8 @@ Deals Completed
 <div class="pop-up" id="pop2"></div>
 
 <script>
-// Particles
-for(let i=0;i<60;i++){
+// Particle background
+for(let i=0;i<80;i++){
 const p=document.createElement('div');
 p.className='particle';
 p.style.left=Math.random()*100+'%';
@@ -171,6 +175,7 @@ el.textContent=count.toLocaleString();
 animateCounter('claimed',387);
 animateCounter('active',1245);
 animateCounter('completed',5432);
+animateCounter('total',12340);
 
 // Leaderboard feed
 const feed=document.getElementById('activityFeed');
@@ -187,7 +192,7 @@ const li=document.createElement('li');
 li.innerHTML=`<div class="avatar">${m.name.charAt(0)}</div><span class="name">${m.name}</span><span class="location">${m.location}</span><span class="reward">${m.reward}</span>`;
 feed.prepend(li);
 if(feed.children.length>5) feed.removeChild(feed.lastChild);
-li.style.boxShadow='0 0 12px var(--primary-yellow)';
+li.style.boxShadow='0 0 12px var(--yellow-light)';
 setTimeout(()=>{li.style.boxShadow='0 0 0 rgba(0,0,0,0)';},800);
 },3500);
 
@@ -213,5 +218,6 @@ pop2.textContent=msg;pop2.style.opacity='1';pop2.style.transform='translateY(0)'
 setTimeout(()=>{pop2.style.opacity='0';pop2.style.transform='translateY(20px)';},2500);
 },5500);
 </script>
+
 </body>
 </html>
