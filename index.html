@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Holiday Walmart Gift Card Event</title>
-
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,9 +14,8 @@
 --soft-white:rgba(255,255,255,0.85);
 --accent-light:rgba(255,182,18,0.3);
 }
-
 /* Reset */
-*{box-sizing:border-box;margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
 font-family:'Poppins',sans-serif;
 background: linear-gradient(180deg,#002a70 0%,#001f50 100%);
@@ -26,14 +23,13 @@ color: var(--white);
 overflow-x:hidden;
 position:relative;
 }
-
-/* Snowflake background */
+/* Snowflakes */
 .snowflake{
 position:fixed;
 top:-10px;
 z-index:0;
 font-size:1em;
-color: var(--soft-white);
+color: rgba(255,255,255,0.4);
 user-select:none;
 pointer-events:none;
 animation:fall linear infinite;
@@ -47,198 +43,55 @@ animation:fall linear infinite;
 .container{
 position:relative;
 z-index:2;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:60px 20px 120px;
 text-align:center;
 }
-
-/* Limited badge */
-.badge{
-display:inline-block;
-font-size:.85rem;
-color:var(--walmart-yellow);
-text-transform:uppercase;
-letter-spacing:1px;
-margin-bottom:12px;
-font-weight:700;
-}
-
 /* Hero */
-h1.hero-title{
-font-family:'Playfair Display',serif;
-font-size:3rem;
-font-weight:700;
-margin-bottom:12px;
-line-height:1.2;
-}
-p.hero-sub{
-color:var(--soft-white);
-font-size:1.1rem;
-margin-bottom:40px;
-}
+.badge{display:inline-block;font-size:.85rem;color:var(--walmart-yellow);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:700;}
+h1.hero-title{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;margin-bottom:12px;line-height:1.2;}
+p.hero-sub{color:var(--soft-white);font-size:1.1rem;margin-bottom:40px;}
 
-/* Steps glass cards */
-.steps-card{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:20px;
-margin-bottom:40px;
-}
-.step{
-flex:1;
-min-width:180px;
-background: rgba(255,255,255,0.05);
-backdrop-filter: blur(12px);
-border-radius:24px;
-padding:25px;
-transition: all 0.3s ease;
-box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-.step:hover{
-transform: translateY(-6px);
-box-shadow: 0 12px 30px var(--accent-light);
-}
-.step-number{
-width:50px; height:50px;
-margin:0 auto 10px;
-background: var(--walmart-yellow);
-color: var(--walmart-blue);
-border-radius:50%;
-display:flex; justify-content:center; align-items:center;
-font-weight:700;
-font-size:1.2rem;
-}
-.step-text{
-font-weight:600;
-font-size:1rem;
-color:var(--white);
-}
+/* Steps */
+.steps-card{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px;}
+.step{flex:1;min-width:180px;background: rgba(255,255,255,0.05);backdrop-filter: blur(12px);border-radius:24px;padding:25px;transition: all 0.3s ease;box-shadow: 0 8px 20px rgba(0,0,0,0.4);}
+.step:hover{transform: translateY(-6px);box-shadow: 0 12px 30px var(--accent-light);}
+.step-number{width:50px; height:50px;margin:0 auto 10px;background: var(--walmart-yellow);color: var(--walmart-blue);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:700;font-size:1.2rem;}
+.step-text{font-weight:600;font-size:1rem;color:var(--white);}
 
 /* CTA */
-.cta-btn{
-display:inline-block;
-margin:0 auto 50px;
-padding:18px 50px;
-font-size:1.3rem;
-font-weight:700;
-color:var(--walmart-blue);
-background:linear-gradient(135deg,var(--walmart-yellow),#ffd55a);
-border-radius:24px;
-text-decoration:none;
-box-shadow:0 12px 30px rgba(255,182,18,0.35);
-animation:shimmer 2s infinite alternate;
-transition:all 0.3s ease;
-}
-.cta-btn:hover{
-box-shadow:0 0 25px var(--walmart-yellow),0 0 50px rgba(255,255,0,0.3);
-transform: scale(1.05);
-}
-@keyframes shimmer{
-0%{box-shadow:0 12px 30px rgba(255,182,18,.35);}
-100%{box-shadow:0 14px 40px rgba(255,220,50,.5);}
-}
+.cta-btn{display:inline-block;margin:0 auto 50px;padding:18px 50px;font-size:1.3rem;font-weight:700;color:var(--walmart-blue);background:linear-gradient(135deg,var(--walmart-yellow),#ffd55a);border-radius:24px;text-decoration:none;box-shadow:0 12px 30px rgba(255,182,18,0.35);animation:shimmer 2s infinite alternate;transition:all 0.3s ease;}
+.cta-btn:hover{box-shadow:0 0 25px var(--walmart-yellow),0 0 50px rgba(255,255,0,0.3);transform: scale(1.05);}
+@keyframes shimmer{0%{box-shadow:0 12px 30px rgba(255,182,18,.35);}100%{box-shadow:0 14px 40px rgba(255,220,50,.5);}}
 
 /* Stats grid */
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin:50px 0;
-}
-.stat-card{
-background: rgba(255,255,255,0.05);
-backdrop-filter: blur(12px);
-border-radius:24px;
-padding:25px;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
-transition: transform 0.3s;
-}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:50px 0;}
+.stat-card{background: rgba(255,255,255,0.05);backdrop-filter: blur(12px);border-radius:24px;padding:25px;box-shadow:0 8px 20px rgba(0,0,0,0.4);transition: transform 0.3s;}
 .stat-card:hover{transform: translateY(-5px);}
-.stat-card strong{
-font-size:2rem;
-display:block;
-margin-bottom:6px;
-color: var(--walmart-yellow);
-text-shadow: 0 0 8px var(--walmart-yellow);
-}
+.stat-card strong{font-size:2rem;display:block;margin-bottom:6px;color: var(--walmart-yellow);text-shadow: 0 0 8px var(--walmart-yellow);}
+.stat-icon{font-size:1.5rem;margin-bottom:8px;display:block;}
 
 /* Leaderboard */
-.activity-card{
-background: rgba(255,255,255,0.07);
-border-radius:24px;
-padding:25px;
-margin:30px 0;
-text-align:left;
-backdrop-filter: blur(12px);
-}
-.activity-card h3{
-margin-bottom:14px;
-font-weight:700;
-font-size:1.2rem;
-color:var(--walmart-yellow);
-}
-.activity-card ul{list-style:none; padding:0; margin:0;}
-.activity-card li{
-padding:12px 10px;
-margin-bottom:6px;
-border-radius:14px;
-background: rgba(255,255,255,0.1);
-display:flex;
-justify-content:space-between;
-font-size:0.95rem;
-transition: all 0.3s;
-}
-.activity-card li span.name{font-weight:600;}
-.activity-card li span.location{opacity:0.7;}
-.activity-card li span.reward{color: var(--walmart-yellow); font-weight:700;}
-
+.activity-card{background: rgba(255,255,255,0.07);border-radius:24px;padding:25px;margin:30px 0;text-align:left;backdrop-filter: blur(12px);}
+.activity-card h3{margin-bottom:14px;font-weight:700;font-size:1.2rem;color:var(--walmart-yellow);}
+.activity-card ul{list-style:none;padding:0;margin:0;overflow:hidden;}
+.activity-card li{padding:12px 10px;margin-bottom:6px;border-radius:14px;background: rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;font-size:0.95rem;transition: all 0.3s;}
+.activity-card li .avatar{width:30px;height:30px;background:var(--walmart-yellow);color:var(--walmart-blue);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:700;margin-right:10px;flex-shrink:0;}
+.activity-card li .name{font-weight:600;}
+.activity-card li .location{opacity:0.7;margin-left:5px;}
+.activity-card li .reward{color: var(--walmart-yellow);font-weight:700;}
 /* Testimonials */
-.testimonials{
-margin:40px auto;
-background: rgba(255,255,255,0.05);
-border-radius:24px;
-padding:28px;
-min-height:80px;
-backdrop-filter: blur(12px);
-font-style:italic;
-font-weight:600;
-font-size:1rem;
-color:var(--white);
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
-
+.testimonials{margin:40px auto;background: rgba(255,255,255,0.05);border-radius:24px;padding:28px;min-height:80px;backdrop-filter: blur(12px);font-style:italic;font-weight:600;font-size:1rem;color:var(--white);text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
 /* FAQ */
-.faq-card{
-background: rgba(255,255,255,0.05);
-color:var(--white);
-border-radius:24px;
-padding:28px;
-margin-top:30px;
-text-align:left;
-backdrop-filter: blur(12px);
-}
-.faq-question{
-font-weight:700;
-cursor:pointer;
-margin-bottom:8px;
-color: var(--walmart-yellow);
-}
-.faq-answer{
-display:none;
-margin-bottom:12px;
-color:var(--soft-white);
-}
-
+.faq-card{background: rgba(255,255,255,0.05);color:var(--white);border-radius:24px;padding:28px;margin-top:30px;text-align:left;backdrop-filter: blur(12px);}
+.faq-question{font-weight:700;cursor:pointer;margin-bottom:8px;color: var(--walmart-yellow);display:flex;align-items:center;}
+.faq-question i{margin-right:8px;}
+.faq-answer{display:none;margin-bottom:12px;color:var(--soft-white);}
 /* Footer */
-footer{
-margin-top:50px;
-text-align:center;
-opacity:.9;
-font-size:.85rem;
-}
+footer{margin-top:50px;text-align:center;opacity:.9;font-size:.85rem;position:relative;}
+.trust-badge{display:inline-block;margin:0 10px;padding:5px 10px;background:rgba(255,255,255,0.1);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.pop-up{position:fixed;bottom:20px;left:20px;background:rgba(0,0,0,0.85);padding:12px 20px;border-radius:18px;color:#fff;font-size:0.95rem;box-shadow:0 6px 20px rgba(0,0,0,0.4);opacity:0;transform: translateY(20px);transition: all 0.5s;}
 </style>
 </head>
 <body>
@@ -246,7 +99,7 @@ font-size:.85rem;
 <div class="container">
 <span class="badge">Limited</span>
 <h1 class="hero-title">Want to claim your Walmart Gift Card? Complete the steps below:</h1>
-<p class="hero-sub">Experience the ultimate Holiday Gift Card Event and join thousands of participants claiming rewards!</p>
+<p class="hero-sub">Join the Holiday Gift Card Event and claim your rewards today!</p>
 
 <!-- Steps -->
 <div class="steps-card">
@@ -259,18 +112,18 @@ font-size:.85rem;
 
 <!-- Stats -->
 <div class="stats">
-<div class="stat-card"><strong id="claimed">387</strong>Gift Cards Claimed Today</div>
-<div class="stat-card"><strong id="active">1,245</strong>Active Participants</div>
-<div class="stat-card"><strong id="completed">5,432</strong>Deals Completed</div>
+<div class="stat-card"><span class="stat-icon">🎁</span><strong id="claimed">387</strong>Gift Cards Claimed</div>
+<div class="stat-card"><span class="stat-icon">👤</span><strong id="active">1,245</strong>Active Participants</div>
+<div class="stat-card"><span class="stat-icon">✔️</span><strong id="completed">5,432</strong>Deals Completed</div>
 </div>
 
 <!-- Leaderboard -->
 <div class="activity-card">
 <h3>Top Participants This Hour</h3>
 <ul id="activityFeed">
-<li><span class="name">Anna</span> <span class="location">NY</span> <span class="reward">$1200</span></li>
-<li><span class="name">Mark</span> <span class="location">TX</span> <span class="reward">$950</span></li>
-<li><span class="name">Sarah</span> <span class="location">CA</span> <span class="reward">$800</span></li>
+<li><div class="avatar">A</div><span class="name">Anna</span><span class="location">NY</span><span class="reward">$1200</span></li>
+<li><div class="avatar">M</div><span class="name">Mark</span><span class="location">TX</span><span class="reward">$950</span></li>
+<li><div class="avatar">S</div><span class="name">Sarah</span><span class="location">CA</span><span class="reward">$800</span></li>
 </ul>
 </div>
 
@@ -281,42 +134,76 @@ font-size:.85rem;
 
 <!-- FAQ -->
 <div class="faq-card">
-<div class="faq-question">What do I need to do to claim the gift card?</div>
-<div class="faq-answer">Sign up using your email and basic info, then complete the recommended deals listed in the event.</div>
+<div class="faq-question"><i>❓</i>What do I need to do to claim the gift card?</div>
+<div class="faq-answer">Sign up with your email and complete recommended deals. Your information is secure and private.</div>
+<div class="faq-question"><i>❓</i>Is my data safe?</div>
+<div class="faq-answer">Yes, all personal info is encrypted and never shared.</div>
+<div class="faq-question"><i>❓</i>How long until I receive the gift card?</div>
+<div class="faq-answer">Most claims are processed within minutes after completing all steps.</div>
+<div class="faq-question"><i>❓</i>Can I participate from any device?</div>
+<div class="faq-answer">Yes, the event works on mobile and tablet devices for the best experience.</div>
 </div>
 
 <!-- Footer -->
-<footer>🔒 Encrypted • Trusted & Secure • Holiday Gift Card Event</footer>
+<footer>
+<span class="trust-badge">🔒 SSL Secure</span>
+<span class="trust-badge">✅ Encrypted</span>
+<span class="trust-badge">💎 Verified</span>
+</footer>
 </div>
+
+<!-- Pop-ups -->
+<div class="pop-up" id="pop1"></div>
+<div class="pop-up" id="pop2"></div>
 
 <!-- Snowflakes -->
 <script>
-for(let i=0;i<120;i++){
+for(let i=0;i<60;i++){
 const s=document.createElement('div');
 s.className='snowflake';
-s.textContent='❄️';
+s.style.width=Math.random()*4+2+'px';
+s.style.height=s.style.width;
 s.style.left=Math.random()*100+'%';
-s.style.fontSize=8+Math.random()*20+'px';
-s.style.animationDuration=5+Math.random()*10+'s';
-s.style.opacity=0.4+Math.random()*0.6;
+s.style.animationDuration=5+Math.random()*8+'s';
+s.style.opacity=0.3+Math.random()*0.5;
 document.body.appendChild(s);
 }
 
+// Stats animation
+function animateCounter(id, target){
+let count=0;
+const el=document.getElementById(id);
+const step=Math.ceil(target/100);
+const interval=setInterval(()=>{
+count+=step;
+if(count>=target){count=target; clearInterval(interval);}
+el.textContent=count.toLocaleString();
+},20);
+}
+animateCounter('claimed',387);
+animateCounter('active',1245);
+animateCounter('completed',5432);
+
 // Leaderboard dynamic feed
-const feed = document.getElementById('activityFeed');
-const messages = [
+const feed=document.getElementById('activityFeed');
+const messages=[
 {name:"Liam",location:"FL",reward:"$750"},
-{name:"Emma",location:"OH",reward:"$600"},
+{name:"Emma",location:"NY",reward:"$1200"},
 {name:"Noah",location:"NY",reward:"$900"},
-{name:"Olivia",location:"TX",reward:"$1200"}
+{name:"Olivia",location:"TX",reward:"$1150"},
+{name:"Sophia",location:"CA",reward:"$680"}
 ];
 setInterval(()=>{
 const m=messages[Math.floor(Math.random()*messages.length)];
 const li=document.createElement('li');
-li.innerHTML=`<span class="name">${m.name}</span> <span class="location">${m.location}</span> <span class="reward">${m.reward}</span>`;
+const initials=m.name.charAt(0);
+li.innerHTML=`<div class="avatar">${initials}</div><span class="name">${m.name}</span><span class="location">${m.location}</span><span class="reward">${m.reward}</span>`;
 feed.prepend(li);
 if(feed.children.length>5) feed.removeChild(feed.lastChild);
-},4000);
+// tiny sparkle animation
+li.style.boxShadow='0 0 12px var(--walmart-yellow)';
+setTimeout(()=>{li.style.boxShadow='0 0 0 rgba(0,0,0,0)';},800);
+},3500);
 
 // Testimonials carousel
 const testimonials=["I just got mine in 5 minutes!","Super easy and fast!","Received my gift card instantly!","Best holiday promo ever!"];
@@ -334,6 +221,31 @@ const ans=q.nextElementSibling;
 ans.style.display=(ans.style.display==='block')?'none':'block';
 });
 });
+
+// Pop-up notifications
+const pop1=document.getElementById('pop1');
+const pop2=document.getElementById('pop2');
+const popMessages=[
+"Emma from New York just claimed $1200!",
+"Liam from Florida just claimed $750!",
+"Sophia from California just claimed $680!",
+"Noah from Texas just claimed $1150!",
+"Olivia from New York just claimed $900!"
+];
+setInterval(()=>{
+const msg=popMessages[Math.floor(Math.random()*popMessages.length)];
+pop1.textContent=msg;
+pop1.style.opacity='1';
+pop1.style.transform='translateY(0)';
+setTimeout(()=>{pop1.style.opacity='0';pop1.style.transform='translateY(20px)';},2500);
+},4000);
+setInterval(()=>{
+const msg=popMessages[Math.floor(Math.random()*popMessages.length)];
+pop2.textContent=msg;
+pop2.style.opacity='1';
+pop2.style.transform='translateY(0)';
+setTimeout(()=>{pop2.style.opacity='0';pop2.style.transform='translateY(20px)';},2500);
+},5500);
 </script>
 </body>
 </html>
