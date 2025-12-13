@@ -7,42 +7,62 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-/* ----------------- General Animations ----------------- */
-@keyframes shimmer { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-.shimmer { animation: shimmer 1.5s infinite; }
-
-@keyframes sparkle { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
-.sparkle { animation: sparkle 1s ease-out; }
-
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-.animate-pulse-hero { animation: pulse 2s infinite; }
-
 body {
-background: url('https://i.ibb.co/7X9Y4nF/snow-bg.png') repeat;
-background-size: cover;
+margin: 0;
 font-family: 'Roboto', sans-serif;
+background: linear-gradient(to bottom, #0071CE, #00A1E0);
 overflow-x: hidden;
+position: relative;
 }
 
-/* ----------------- Colors ----------------- */
-.walmart-blue { color: #0071CE; }
-.walmart-yellow { color: #FFC220; }
+/* ---------------- Snowflakes ---------------- */
+.snowflake {
+position: fixed;
+top: -10px;
+color: white;
+font-size: 1em;
+z-index: 9999;
+user-select: none;
+pointer-events: none;
+animation-name: fall;
+animation-timing-function: linear;
+}
+@keyframes fall {
+0% { transform: translateY(0) rotate(0deg); }
+100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* ---------------- Hero ---------------- */
+.animate-pulse-hero { animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
+
+/* ---------------- Steps ---------------- */
 .luxury-step1 { background: linear-gradient(145deg, #FFF3E0, #FFE0B2); }
 .luxury-step2 { background: linear-gradient(145deg, #FFF9C4, #FFECB3); }
 .luxury-step3 { background: linear-gradient(145deg, #FFF59D, #FFF176); }
+
+/* ---------------- Click Button ---------------- */
 .click-button {
-background: linear-gradient(90deg, #FFC220, #FFD700);
+background: linear-gradient(90deg,#FFC220,#FFD700);
 color: #0071CE;
 font-weight: bold;
-text-shadow: 0 0 5px #FFC220, 0 0 10px #FFD700;
+text-shadow:0 0 5px #FFC220,0 0 10px #FFD700;
+box-shadow:0 0 10px #FFC220;
+transition: all 0.3s ease-in-out;
 }
 .click-button:hover {
 transform: scale(1.05);
-box-shadow: 0 0 15px #FFD700, 0 0 25px #FFC220;
-transition: all 0.3s ease-in-out;
+box-shadow:0 0 15px #FFD700,0 0 25px #FFC220;
 }
 
-/* ----------------- Popups ----------------- */
+/* ---------------- Cards ---------------- */
+.card { border-radius: 1.5rem; padding:2rem; box-shadow:0 10px 25px rgba(0,0,0,0.2); color:#0071CE; }
+.card-stats { background: linear-gradient(135deg,#FFECB3,#FFF9C4); }
+.card-leaderboard { background: linear-gradient(135deg,#B3E5FC,#81D4FA); }
+.card-testimonial { background: linear-gradient(135deg,#FFE0B2,#FFF3E0); }
+.card-faq { background: linear-gradient(135deg,#C8E6C9,#A5D6A7); }
+
+/* ---------------- Popups ---------------- */
 .popup {
 position: fixed;
 bottom: 20px;
@@ -61,63 +81,61 @@ opacity: 0;
 </head>
 <body>
 
-<!-- ======================= HERO SECTION ======================= -->
-<section class="bg-gradient-to-br from-blue-700 to-green-600 text-white py-20 px-4 relative overflow-hidden rounded-b-3xl">
-<div class="max-w-5xl mx-auto text-center">
+<!-- ================= HERO ================= -->
+<section class="py-20 px-4 text-center text-white">
 <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-pulse-hero">Limited Time Walmart</h1>
-<p class="text-xl md:text-2xl mb-8">Thousands already claimed their rewards. Secure yours today – fast, safe, and verified.</p>
+<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Thousands already claimed their rewards. Secure yours today – fast, safe, and verified.</p>
 
-<!-- ======================= STEPS ======================= -->
-<div class="grid md:grid-cols-3 gap-6 mb-6">
-<div class="p-6 rounded-3xl shadow-xl luxury-step1 text-black">
+<!-- Steps -->
+<div class="grid md:grid-cols-3 gap-6 mb-6 max-w-6xl mx-auto">
+<div class="luxury-step1 p-6 rounded-3xl shadow-xl text-black">
 <p class="font-bold text-lg mb-2">Step 1</p>
 <p>Answer surveys</p>
 </div>
-<div class="p-6 rounded-3xl shadow-xl luxury-step2 text-black">
+<div class="luxury-step2 p-6 rounded-3xl shadow-xl text-black">
 <p class="font-bold text-lg mb-2">Step 2</p>
 <p>Enter email & basic info</p>
 </div>
-<div class="p-6 rounded-3xl shadow-xl luxury-step3 text-black">
+<div class="luxury-step3 p-6 rounded-3xl shadow-xl text-black">
 <p class="font-bold text-lg mb-2">Step 3</p>
 <p>Complete recommended deals</p>
 </div>
 </div>
 
-<!-- ======================= CLICK BUTTON ======================= -->
+<!-- Click Button -->
 <div class="mt-6">
 <a href="YOUR_TRACKING_LINK_HERE" class="inline-block px-10 py-5 rounded-3xl shadow-xl click-button text-lg">Click Here →</a>
 </div>
-</div>
 </section>
 
-<!-- ======================= STATS / MILESTONES ======================= -->
-<section class="py-20 px-4 bg-gray-50 text-center">
-<h2 class="text-4xl font-bold mb-12">Stats & Milestones</h2>
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-3xl shadow-xl">
+<!-- ================= STATS / MILESTONES ================= -->
+<section class="py-20 px-4 text-center">
+<h2 class="text-4xl font-bold mb-12 text-white">Stats & Milestones</h2>
+<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+<div class="card card-stats">
 <div class="text-6xl font-bold shimmer">12,540+</div>
-<p class="mt-3 text-gray-700 font-semibold">Claims Completed</p>
+<p class="mt-3 font-semibold">Claims Completed</p>
 </div>
-<div class="bg-white p-8 rounded-3xl shadow-xl">
+<div class="card card-stats">
 <div class="text-5xl font-bold shimmer">7,860+</div>
-<p class="mt-3 text-gray-700 font-semibold">Active Participants</p>
+<p class="mt-3 font-semibold">Active Participants</p>
 </div>
-<div class="bg-white p-8 rounded-3xl shadow-xl">
+<div class="card card-stats">
 <div class="text-5xl font-bold shimmer">4,320+</div>
-<p class="mt-3 text-gray-700 font-semibold">Deals Completed</p>
+<p class="mt-3 font-semibold">Deals Completed</p>
 </div>
 </div>
 </section>
 
-<!-- ======================= LIVE LEADERBOARD ======================= -->
-<section class="py-20 px-4 bg-white text-center">
-<h2 class="text-4xl font-bold mb-12">Recent Winners</h2>
-<div class="max-w-4xl mx-auto space-y-4 overflow-hidden" id="leaderboard"></div>
+<!-- ================= LIVE LEADERBOARD ================= -->
+<section class="py-20 px-4 text-center">
+<h2 class="text-4xl font-bold mb-12 text-white">Recent Winners</h2>
+<div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="leaderboard"></div>
 </section>
 
-<!-- ======================= PROGRESS / LOYALTY ======================= -->
-<section class="py-12 px-4 bg-gray-50 text-center">
-<div class="max-w-3xl mx-auto bg-white p-6 rounded-3xl shadow-xl">
+<!-- ================= PROGRESS / LOYALTY ================= -->
+<section class="py-12 px-4 text-center">
+<div class="card card-leaderboard max-w-3xl mx-auto">
 <p class="font-semibold mb-2">Progress: Sarah Claimed 3 of 5 steps</p>
 <p class="mb-4">Only 2 steps left to get <span class="font-bold">$1300 gift card</span></p>
 <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
@@ -126,81 +144,79 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ======================= TESTIMONIALS ======================= -->
-<section class="py-20 px-4 bg-gray-50 text-center">
-<h2 class="text-4xl font-bold mb-12">Testimonials</h2>
-<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-<div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transform transition">
-<p class="text-gray-700">"Received my reward within 24 hours. Absolutely seamless process."</p>
-<p class="font-bold mt-4 text-gray-900">- Sarah W., California</p>
+<!-- ================= TESTIMONIALS ================= -->
+<section class="py-20 px-4 text-center">
+<h2 class="text-4xl font-bold mb-12 text-white">Testimonials</h2>
+<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+<div class="card card-testimonial hover:-translate-y-2 transform transition">
+<p>"Received my reward within 24 hours. Absolutely seamless process."</p>
+<p class="font-bold mt-4">- Sarah W., California</p>
 </div>
-<div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transform transition">
-<p class="text-gray-700">"Fast, secure, and verified. Highly recommended."</p>
-<p class="font-bold mt-4 text-gray-900">- Michael B., New York</p>
+<div class="card card-testimonial hover:-translate-y-2 transform transition">
+<p>"Fast, secure, and verified. Highly recommended."</p>
+<p class="font-bold mt-4">- Michael B., New York</p>
 </div>
-<div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transform transition">
-<p class="text-gray-700">"Everything explained clearly, trusted and verified."</p>
-<p class="font-bold mt-4 text-gray-900">- Emma R., Texas</p>
-</div>
-</div>
-</section>
-
-<!-- ======================= FAQ ======================= -->
-<section class="py-20 px-4 bg-white text-center">
-<h2 class="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
-<div class="max-w-3xl mx-auto space-y-4 text-left">
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-blue-700 transition">
-<p class="font-bold text-lg mb-2">Is my information secure?</p>
-<p class="faq-content hidden text-gray-700">All information is encrypted and stored securely. We never share your data.</p>
-</div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-blue-700 transition">
-<p class="font-bold text-lg mb-2">How do I claim my reward?</p>
-<p class="faq-content hidden text-gray-700">Follow the 3 steps above and click "Click Here →" to claim instantly.</p>
-</div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-blue-700 transition">
-<p class="font-bold text-lg mb-2">Can I participate on mobile?</p>
-<p class="faq-content hidden text-gray-700">Yes, fully mobile-friendly and responsive.</p>
-</div>
-<div class="faq-item border p-6 rounded-xl cursor-pointer hover:border-blue-700 transition">
-<p class="font-bold text-lg mb-2">Is it verified?</p>
-<p class="faq-content hidden text-gray-700">Yes, all claims are fully verified and trusted.</p>
+<div class="card card-testimonial hover:-translate-y-2 transform transition">
+<p>"Everything explained clearly, trusted and verified."</p>
+<p class="font-bold mt-4">- Emma R., Texas</p>
 </div>
 </div>
 </section>
 
-<!-- ======================= FOOTER ======================= -->
-<footer class="py-12 px-4 bg-walmart-blue text-white text-center">
+<!-- ================= FAQ ================= -->
+<section class="py-20 px-4 text-center">
+<h2 class="text-4xl font-bold mb-12 text-white">Frequently Asked Questions</h2>
+<div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
+<div class="card card-faq faq-item cursor-pointer">
+<p class="font-bold mb-2">Is my information secure?</p>
+<p class="faq-content hidden">All information is encrypted and stored securely. We never share your data.</p>
+</div>
+<div class="card card-faq faq-item cursor-pointer">
+<p class="font-bold mb-2">How do I claim my reward?</p>
+<p class="faq-content hidden">Follow the 3 steps above and click "Click Here →" to claim instantly.</p>
+</div>
+<div class="card card-faq faq-item cursor-pointer">
+<p class="font-bold mb-2">Can I participate on mobile?</p>
+<p class="faq-content hidden">Yes, fully mobile-friendly and responsive.</p>
+</div>
+<div class="card card-faq faq-item cursor-pointer">
+<p class="font-bold mb-2">Is it verified?</p>
+<p class="faq-content hidden">Yes, all claims are fully verified and trusted.</p>
+</div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-12 px-4 text-center text-white">
 <p class="mb-4">SSL Secured • Encrypted • Verified • 100% Safe</p>
 <p>© 2025 Limited Time Walmart</p>
 </footer>
 
-<!-- ======================= POPUP NOTIFICATION ======================= -->
+<!-- ================= POPUP ================= -->
 <div id="popup" class="popup"></div>
 
 <script>
-// ======================= FAQ Toggle =======================
+// ---------------- FAQ Toggle ----------------
 document.querySelectorAll('.faq-item').forEach(item => {
 item.addEventListener('click', () => {
-const content = item.querySelector('.faq-content');
-content.classList.toggle('hidden');
+item.querySelector('.faq-content').classList.toggle('hidden');
 });
 });
 
-// ======================= Live Leaderboard =======================
+// ---------------- Leaderboard ----------------
 const leaderboardEl = document.getElementById('leaderboard');
 const winners = ["Emma, NY","James, TX","Lily, FL","Olivia, CA","Mason, IL","Sophia, WA"];
 const rewards = ["$1200","$850","$1500","$950","$1100","$700"];
-function updateLeaderboard() {
-leaderboardEl.innerHTML = '';
+function updateLeaderboard(){
+leaderboardEl.innerHTML='';
 for(let i=0;i<5;i++){
 const name = winners[Math.floor(Math.random()*winners.length)];
 const reward = rewards[Math.floor(Math.random()*rewards.length)];
-const div = document.createElement('div');
-div.className = "bg-gray-100 p-6 rounded-xl shadow flex justify-between items-center";
-div.innerHTML = `<div class="flex items-center gap-4">
+const div=document.createElement('div');
+div.className="card card-leaderboard flex justify-between items-center p-6";
+div.innerHTML=`<div class="flex items-center gap-4">
 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-white">${name.split(',')[0].charAt(0)}${name.split(',')[1].charAt(1)}</div>
-<p class="font-semibold">${name} claimed ${reward}</p>
-</div>
+<p class="font-semibold">${name} claimed ${reward}</p></div>
 <div class="sparkle w-6 h-6 bg-yellow-400 rounded-full"></div>`;
 leaderboardEl.appendChild(div);
 }
@@ -208,20 +224,31 @@ leaderboardEl.appendChild(div);
 updateLeaderboard();
 setInterval(updateLeaderboard,1500);
 
-// ======================= Popups =======================
-const popupEl = document.getElementById('popup');
+// ---------------- Popups ----------------
+const popupEl=document.getElementById('popup');
 function showPopup(){
-const name = winners[Math.floor(Math.random()*winners.length)];
-const reward = rewards[Math.floor(Math.random()*rewards.length)];
-popupEl.textContent = `${name} just got ${reward}!`;
-popupEl.style.right = '20px';
-popupEl.style.opacity = 1;
-setTimeout(()=>{
-popupEl.style.right = '-350px';
-popupEl.style.opacity = 0;
-},3000);
+const name=winners[Math.floor(Math.random()*winners.length)];
+const reward=rewards[Math.floor(Math.random()*rewards.length)];
+popupEl.textContent=`${name} just got ${reward}!`;
+popupEl.style.right='20px';
+popupEl.style.opacity=1;
+setTimeout(()=>{popupEl.style.right='-350px';popupEl.style.opacity=0;},3000);
 }
 setInterval(showPopup,1500);
+
+// ---------------- Snow ----------------
+function createSnowflake(){
+const snow=document.createElement('div');
+snow.className='snowflake';
+snow.textContent='❄';
+snow.style.left=Math.random()*window.innerWidth+'px';
+snow.style.fontSize=(Math.random()*15+10)+'px';
+snow.style.animationDuration=(Math.random()*5+5)+'s';
+snow.style.opacity=Math.random();
+document.body.appendChild(snow);
+setTimeout(()=>{snow.remove();},10000);
+}
+setInterval(createSnowflake,200);
 </script>
 </body>
 </html>
