@@ -1,306 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Holiday Gift Card Event</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holiday Walmart Gift Card Event</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
---walmart-blue:#003087;
---walmart-yellow:#ffb612;
---white:#ffffff;
---soft-white:rgba(255,255,255,.85);
+:root {
+--walmart-blue: #003087;
+--walmart-yellow: #ffb612;
+--white: #ffffff;
+--soft-white: rgba(255,255,255,0.85);
 }
 
-*{box-sizing:border-box}
+/* Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
 
-html,body{
-margin:0;
-padding:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-background:linear-gradient(180deg,#002a70 0%, #00193f 100%);
-color:var(--white);
+/* Body */
+body {
+font-family: 'Inter', 'Segoe UI', sans-serif;
+background: linear-gradient(180deg, #003087 0%, #001f5c 100%);
+color: var(--white);
+overflow-x: hidden;
 }
 
-/* ===== DESKTOP ACCESS NOTICE ===== */
-.desktop-lock{
-position:fixed;
+/* Snow background */
+.snow {
+position: fixed;
+top:0; left:0; right:0; bottom:0;
+pointer-events:none;
+z-index:0;
+}
+.snow span {
+position: absolute;
+top: -10px;
+width: 6px; height:6px;
+background: var(--white);
+border-radius: 50%;
+opacity: 0.8;
+animation: fall linear infinite;
+}
+@keyframes fall {
+to { transform: translateY(110vh); }
+}
+
+/* Desktop overlay */
+#desktopLock {
+display: none;
+position: fixed;
 inset:0;
-background:#00193f;
-display:none;
-align-items:center;
+background: var(--walmart-blue);
+color: var(--white);
+z-index: 9999;
+display:flex;
 justify-content:center;
+align-items:center;
 text-align:center;
-z-index:9999;
 padding:40px;
 }
-.desktop-lock div{
-max-width:520px;
-}
-.desktop-lock h2{
-font-weight:600;
+#desktopLock h2 {
+font-size:2rem;
 margin-bottom:12px;
 }
-.desktop-lock p{
-opacity:.85;
+#desktopLock p {
+font-size:1.1rem;
+opacity:0.85;
 line-height:1.6;
 }
 
-/* ===== BACKGROUND LIGHT MOTION ===== */
-.bg-glow{
-position:fixed;
-width:600px;
-height:600px;
-background:radial-gradient(circle, rgba(255,182,18,.25), transparent 60%);
-top:-200px;
-right:-200px;
-filter:blur(40px);
-animation:float 14s infinite alternate ease-in-out;
-}
-@keyframes float{
-to{transform:translate(-80px,120px)}
+/* Container */
+.container {
+position: relative;
+z-index: 2;
+max-width: 640px;
+margin: auto;
+padding: 60px 20px 100px;
+text-align: center;
 }
 
-/* ===== LAYOUT ===== */
-.container{
-max-width:620px;
-margin:auto;
-padding:64px 22px 80px;
-position:relative;
-z-index:2;
-}
-
-/* ===== HERO ===== */
-.event-label{
+/* Limited badge */
+.badge {
 display:inline-block;
-padding:8px 18px;
-border-radius:40px;
-background:rgba(255,255,255,.12);
-font-size:.85rem;
-letter-spacing:.04em;
+background: var(--walmart-yellow);
+color: var(--walmart-blue);
+font-weight: 700;
+font-size: 0.9rem;
+padding: 6px 18px;
+border-radius: 50px;
+margin-bottom: 18px;
+letter-spacing:0.5px;
 }
 
-h1{
-font-size:2.4rem;
+/* Hero */
+h1.hero-title {
+font-family: 'Montserrat', sans-serif;
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom:12px;
 line-height:1.2;
-margin:22px 0 12px;
-font-weight:700;
 }
-
-.subtitle{
-color:var(--soft-white);
+p.hero-sub {
+color: var(--soft-white);
 font-size:1.05rem;
-line-height:1.6;
-max-width:520px;
+margin-bottom:30px;
 }
 
-/* ===== STEPS CARD ===== */
-.steps-card{
-margin-top:36px;
-background:rgba(255,255,255,.1);
-backdrop-filter:blur(14px);
-border-radius:26px;
-padding:28px;
+/* Steps card */
+.steps-card {
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(12px);
+border-radius: 24px;
+padding: 28px 20px;
+text-align: left;
+margin: auto;
 }
-
-.step{
-display:flex;
-gap:16px;
-padding:18px 0;
-border-bottom:1px solid rgba(255,255,255,.18);
-}
-.step:last-child{border-bottom:none}
-
-.step-index{
-min-width:36px;
-height:36px;
-border-radius:50%;
-background:var(--walmart-yellow);
-color:var(--walmart-blue);
+.step {
 display:flex;
 align-items:center;
+gap:15px;
+padding:14px 0;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
+.step:last-child { border-bottom:none; }
+.step-number {
+width:36px;
+height:36px;
+background: var(--walmart-yellow);
+color: var(--walmart-blue);
+border-radius:50%;
+display:flex;
 justify-content:center;
+align-items:center;
 font-weight:700;
 }
+.step-text { font-weight:600; font-size:1rem; color: var(--white); }
 
-.step-text{
-line-height:1.5;
-}
-
-/* ===== CTA ===== */
-.cta{
-margin-top:26px;
+/* CTA button */
+.cta-btn {
 display:block;
-text-align:center;
+width:100%;
+max-width:360px;
+margin:25px auto 0;
+background: linear-gradient(135deg,#ffb612,#ffd56a);
+color: var(--walmart-blue);
+font-weight:700;
+font-size:1.2rem;
 padding:18px;
 border-radius:16px;
-background:linear-gradient(135deg,#ffb612,#ffd56a);
-color:var(--walmart-blue);
-font-weight:700;
-font-size:1.1rem;
 text-decoration:none;
-box-shadow:0 12px 40px rgba(255,182,18,.35);
+box-shadow:0 12px 30px rgba(255,182,18,0.35);
 }
 
-/* ===== STATS ===== */
-.stats{
-margin-top:44px;
+/* Stats cards */
+.stats {
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:18px;
+margin:40px 0;
 }
-.stat{
-background:var(--white);
-color:var(--walmart-blue);
-border-radius:22px;
+.stat-card {
+background: var(--white);
+color: var(--walmart-blue);
+border-radius: 22px;
 padding:22px;
 text-align:center;
 }
-.stat strong{
-font-size:1.9rem;
-display:block;
-}
+.stat-card strong { display:block; font-size:1.9rem; margin-bottom:6px; }
 
-/* ===== ACTIVITY ===== */
-.activity{
-margin-top:46px;
-background:rgba(255,255,255,.1);
-border-radius:26px;
-padding:26px;
+/* Live leaderboard & activity */
+.activity-card {
+background: rgba(255,255,255,0.12);
+border-radius: 24px;
+padding:22px;
+margin:20px 0;
+text-align:left;
 }
-.activity h3{
-margin:0 0 14px;
-font-weight:600;
+.activity-card h3 { margin-bottom:14px; font-weight:700; }
+.activity-card ul { list-style:none; padding:0; margin:0; }
+.activity-card li {
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,0.15);
+font-size:0.95rem;
 }
-.activity ul{
-list-style:none;
-padding:0;
-margin:0;
-}
-.activity li{
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,.18);
-opacity:.92;
-}
+.activity-card li:last-child { border-bottom:none; }
 
-/* ===== FAQ ===== */
-.faq{
-margin-top:46px;
-background:var(--white);
-color:var(--walmart-blue);
-border-radius:26px;
+/* FAQ */
+.faq-card {
+background: var(--white);
+color: var(--walmart-blue);
+border-radius:24px;
 padding:28px;
+margin-top:30px;
+text-align:left;
 }
-.faq strong{
-display:block;
-margin-bottom:8px;
+.faq-card strong { display:block; margin-bottom:8px; font-weight:600; }
+
+/* Footer */
+footer {
+margin-top:40px;
+text-align:center;
+opacity:0.8;
+font-size:0.85rem;
 }
 
-/* ===== FOOTER ===== */
-footer{
-margin-top:54px;
-text-align:center;
-font-size:.85rem;
-opacity:.8;
+/* Hero section spacing */
+.hero-top {
+margin-bottom:30px;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="desktop-lock" id="desktopLock">
+<!-- Desktop lock overlay -->
+<div id="desktopLock">
 <div>
-<h2>Mobile access required</h2>
-<p>
-This holiday event is optimized for mobile participation.
-Please continue using a mobile device to access the experience.
-</p>
+<h2>Mobile Access Required</h2>
+<p>This holiday event is only available on mobile devices. Please open this page on your smartphone to claim your gift card.</p>
 </div>
 </div>
 
-<div class="bg-glow"></div>
+<!-- Snow container -->
+<div class="snow" id="snow"></div>
 
 <div class="container">
+<!-- Hero -->
+<span class="badge">Limited</span>
+<div class="hero-top">
+<h1 class="hero-title">Want to claim your Walmart Gift Card? Complete the steps below:</h1>
+<p class="hero-sub">At the Holiday Gift Card Event, thousands are participating and claiming their rewards right now!</p>
+</div>
 
-<span class="event-label">Holiday Gift Card Event</span>
-
-<h1>Claim Your Walmart Gift Card</h1>
-<p class="subtitle">
-A limited seasonal opportunity designed for qualified participants.
-Join thousands currently completing the holiday reward flow.
-</p>
-
+<!-- Steps -->
 <div class="steps-card">
-<div class="step">
-<div class="step-index">1</div>
-<div class="step-text">Complete short surveys</div>
-</div>
-<div class="step">
-<div class="step-index">2</div>
-<div class="step-text">Enter email and basic information</div>
-</div>
-<div class="step">
-<div class="step-index">3</div>
-<div class="step-text">Complete the recommended deals</div>
+<div class="step"><div class="step-number">1</div><div class="step-text">Complete short surveys</div></div>
+<div class="step"><div class="step-number">2</div><div class="step-text">Enter your email and basic info</div></div>
+<div class="step"><div class="step-number">3</div><div class="step-text">Complete the recommended deals</div></div>
+<a class="cta-btn" href="https://trkio.org/aff_c?offer_id=1525&aff_id=64120">Click Here</a>
 </div>
 
-<a class="cta" href="https://trkio.org/aff_c?offer_id=1525&aff_id=64120">
-Click Here
-</a>
-</div>
-
+<!-- Stats -->
 <div class="stats">
-<div class="stat">
-<strong id="claimed">387</strong>
-Claimed today
-</div>
-<div class="stat">
-<strong id="active">1,248</strong>
-Active participants
-</div>
+<div class="stat-card"><strong id="claimed">387</strong>Gift Cards Claimed Today</div>
+<div class="stat-card"><strong id="active">1,245</strong>Active Participants</div>
 </div>
 
-<div class="activity">
-<h3>Recent activity</h3>
+<!-- Live Leaderboard / Recent Activity -->
+<div class="activity-card">
+<h3>Recent Activity</h3>
 <ul id="activityFeed">
-<li>Participant completed final step</li>
-<li>Reward successfully unlocked</li>
-<li>New participant joined the event</li>
+<li>Anna from New York just claimed her $1200 gift card</li>
+<li>Mark from Texas completed 5 deals</li>
+<li>Sarah from California unlocked her gift card</li>
 </ul>
 </div>
 
-<div class="faq">
+<!-- FAQ -->
+<div class="faq-card">
 <strong>What do I need to do to claim the gift card?</strong>
-Sign up using your email and basic information, then complete the
-recommended deals shown during the process.
+Sign up using your email and basic information, then complete the recommended deals listed in the event.
 </div>
 
-<footer>
-Secure participation • Encrypted data • Verified holiday promotion
-</footer>
-
+<footer>🔒 Trusted & Secure • Holiday Gift Card Event</footer>
 </div>
 
 <script>
+// Desktop lock
 if(window.innerWidth > 768){
-document.getElementById("desktopLock").style.display = "flex";
+document.getElementById('desktopLock').style.display = 'flex';
 }
 
-const feed = document.getElementById("activityFeed");
-const messages = [
-"Participant completed recommended deals",
-"Reward unlocked successfully",
-"Verification completed",
-"New participant joined the event"
-];
+// Snow generation
+const snowContainer = document.getElementById('snow');
+for(let i=0;i<80;i++){
+const s = document.createElement('span');
+s.style.left = Math.random()*100 + '%';
+s.style.animationDuration = 5 + Math.random()*10 + 's';
+s.style.width = 4 + Math.random()*4 + 'px';
+s.style.height = s.style.width;
+snowContainer.appendChild(s);
+}
 
+// Live feed random activity
+const feed = document.getElementById('activityFeed');
+const messages = [
+"Liam from Florida claimed a gift card",
+"Emma from Ohio completed 4 deals",
+"Noah from New York unlocked his reward",
+"Olivia from Texas claimed a gift card"
+];
 setInterval(()=>{
-const li = document.createElement("li");
+const li = document.createElement('li');
 li.textContent = messages[Math.floor(Math.random()*messages.length)];
 feed.prepend(li);
-if(feed.children.length > 4) feed.removeChild(feed.lastChild);
-}, 4200);
+if(feed.children.length>5) feed.removeChild(feed.lastChild);
+},3500);
 </script>
 
 </body>
