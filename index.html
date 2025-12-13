@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limited Time Walmart</title>
+<title>Want a Walmart Gift Card?</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -15,7 +15,7 @@ overflow-x: hidden;
 position: relative;
 }
 
-/* ---------------- Snowflakes ---------------- */
+/* Snowflakes */
 .snowflake {
 position: fixed;
 top: -10px;
@@ -32,16 +32,16 @@ animation-timing-function: linear;
 100% { transform: translateY(100vh) rotate(360deg); }
 }
 
-/* ---------------- Hero ---------------- */
+/* Hero Animation */
 .animate-pulse-hero { animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
 
-/* ---------------- Steps ---------------- */
+/* Step Boxes */
 .luxury-step1 { background: linear-gradient(145deg, #FFF3E0, #FFE0B2); }
 .luxury-step2 { background: linear-gradient(145deg, #FFF9C4, #FFECB3); }
 .luxury-step3 { background: linear-gradient(145deg, #FFF59D, #FFF176); }
 
-/* ---------------- Click Button ---------------- */
+/* Click Button */
 .click-button {
 background: linear-gradient(90deg,#FFC220,#FFD700);
 color: #0071CE;
@@ -55,14 +55,15 @@ transform: scale(1.05);
 box-shadow:0 0 15px #FFD700,0 0 25px #FFC220;
 }
 
-/* ---------------- Cards ---------------- */
+/* Cards */
 .card { border-radius: 1.5rem; padding:2rem; box-shadow:0 10px 25px rgba(0,0,0,0.2); color:#0071CE; }
 .card-stats { background: linear-gradient(135deg,#FFECB3,#FFF9C4); }
 .card-leaderboard { background: linear-gradient(135deg,#B3E5FC,#81D4FA); }
 .card-testimonial { background: linear-gradient(135deg,#FFE0B2,#FFF3E0); }
 .card-faq { background: linear-gradient(135deg,#C8E6C9,#A5D6A7); }
+.card-estimator { background: linear-gradient(135deg,#FFD54F,#FFB74D); color:#0071CE; }
 
-/* ---------------- Popups ---------------- */
+/* Popups */
 .popup {
 position: fixed;
 bottom: 20px;
@@ -81,9 +82,9 @@ opacity: 0;
 </head>
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- Hero -->
 <section class="py-20 px-4 text-center text-white">
-<h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-pulse-hero">Limited Time Walmart</h1>
+<h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-pulse-hero">Want a Walmart Gift Card?</h1>
 <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Thousands already claimed their rewards. Secure yours today – fast, safe, and verified.</p>
 
 <!-- Steps -->
@@ -108,7 +109,7 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ================= STATS / MILESTONES ================= -->
+<!-- Stats / Milestones -->
 <section class="py-20 px-4 text-center">
 <h2 class="text-4xl font-bold mb-12 text-white">Stats & Milestones</h2>
 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -127,13 +128,13 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ================= LIVE LEADERBOARD ================= -->
+<!-- Live Leaderboard -->
 <section class="py-20 px-4 text-center">
 <h2 class="text-4xl font-bold mb-12 text-white">Recent Winners</h2>
 <div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="leaderboard"></div>
 </section>
 
-<!-- ================= PROGRESS / LOYALTY ================= -->
+<!-- Progress / Loyalty -->
 <section class="py-12 px-4 text-center">
 <div class="card card-leaderboard max-w-3xl mx-auto">
 <p class="font-semibold mb-2">Progress: Sarah Claimed 3 of 5 steps</p>
@@ -144,7 +145,7 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
+<!-- Testimonials -->
 <section class="py-20 px-4 text-center">
 <h2 class="text-4xl font-bold mb-12 text-white">Testimonials</h2>
 <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -163,7 +164,7 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!-- FAQ -->
 <section class="py-20 px-4 text-center">
 <h2 class="text-4xl font-bold mb-12 text-white">Frequently Asked Questions</h2>
 <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
@@ -186,24 +187,35 @@ opacity: 0;
 </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- Reward Estimator -->
+<section class="py-20 px-4 text-center">
+<h2 class="text-4xl font-bold mb-12 text-white">Reward Estimator</h2>
+<div class="card card-estimator max-w-2xl mx-auto p-8">
+<label class="block font-bold mb-2 text-lg">Steps Completed (0-5):</label>
+<input type="number" id="stepsInput" min="0" max="5" class="w-full p-3 rounded-lg mb-4 text-black">
+<button onclick="calculateReward()" class="click-button px-6 py-3 rounded-2xl">Estimate Reward</button>
+<p class="mt-4 font-bold text-xl" id="rewardResult"></p>
+</div>
+</section>
+
+<!-- Footer -->
 <footer class="py-12 px-4 text-center text-white">
 <p class="mb-4">SSL Secured • Encrypted • Verified • 100% Safe</p>
-<p>© 2025 Limited Time Walmart</p>
+<p>© 2025</p>
 </footer>
 
-<!-- ================= POPUP ================= -->
+<!-- Popup -->
 <div id="popup" class="popup"></div>
 
 <script>
-// ---------------- FAQ Toggle ----------------
+// FAQ Toggle
 document.querySelectorAll('.faq-item').forEach(item => {
 item.addEventListener('click', () => {
 item.querySelector('.faq-content').classList.toggle('hidden');
 });
 });
 
-// ---------------- Leaderboard ----------------
+// Leaderboard
 const leaderboardEl = document.getElementById('leaderboard');
 const winners = ["Emma, NY","James, TX","Lily, FL","Olivia, CA","Mason, IL","Sophia, WA"];
 const rewards = ["$1200","$850","$1500","$950","$1100","$700"];
@@ -224,7 +236,7 @@ leaderboardEl.appendChild(div);
 updateLeaderboard();
 setInterval(updateLeaderboard,1500);
 
-// ---------------- Popups ----------------
+// Popups
 const popupEl=document.getElementById('popup');
 function showPopup(){
 const name=winners[Math.floor(Math.random()*winners.length)];
@@ -234,9 +246,9 @@ popupEl.style.right='20px';
 popupEl.style.opacity=1;
 setTimeout(()=>{popupEl.style.right='-350px';popupEl.style.opacity=0;},3000);
 }
-setInterval(showPopup,1500);
+setInterval(showPopup,2500);
 
-// ---------------- Snow ----------------
+// Snowflakes
 function createSnowflake(){
 const snow=document.createElement('div');
 snow.className='snowflake';
@@ -249,6 +261,18 @@ document.body.appendChild(snow);
 setTimeout(()=>{snow.remove();},10000);
 }
 setInterval(createSnowflake,200);
+
+// Reward Estimator
+function calculateReward(){
+const steps = parseInt(document.getElementById('stepsInput').value);
+let reward = 0;
+if(steps >=0 && steps <=5){
+reward = steps*260;
+document.getElementById('rewardResult').textContent = `Estimated Reward: $${reward}`;
+} else {
+document.getElementById('rewardResult').textContent = "Please enter a value between 0 and 5";
+}
+}
 </script>
 </body>
 </html>
