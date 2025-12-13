@@ -15,6 +15,15 @@ overflow-x: hidden;
 position: relative;
 }
 
+/* Urgency Banner */
+.urgency-pulse {
+animation: pulseUrgency 1.5s infinite;
+}
+@keyframes pulseUrgency {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.8; }
+}
+
 /* Snowflakes */
 .snowflake {
 position: fixed;
@@ -81,6 +90,11 @@ opacity: 0;
 </style>
 </head>
 <body>
+
+<!-- Urgency Banner -->
+<div class="w-full bg-red-600 text-white text-center py-2 font-bold text-lg urgency-pulse">
+Limited Time! Hurry Up!
+</div>
 
 <!-- Hero -->
 <section class="py-20 px-4 text-center text-white">
