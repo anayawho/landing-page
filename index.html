@@ -1,216 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Holiday Walmart Gift Card</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Holiday Gift Card Event</title>
+
 <style>
-/* Reset & basic styling */
-body, html {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
-background: #f0f8ff;
-color: #003087; /* Walmart Blue */
+:root{
+--walmart-blue:#003087;
+--walmart-yellow:#ffb612;
+--white:#ffffff;
+--soft-white:rgba(255,255,255,.85);
 }
-header {
-text-align: center;
-padding: 40px 20px;
-background: linear-gradient(to bottom, #fef9e7, #fff);
-position: relative;
+
+*{box-sizing:border-box}
+
+html,body{
+margin:0;
+padding:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+background:linear-gradient(180deg,#002a70 0%, #00193f 100%);
+color:var(--white);
 }
-h1 {
-color: #003087;
-font-size: 2em;
-margin-bottom: 10px;
+
+/* ===== DESKTOP ACCESS NOTICE ===== */
+.desktop-lock{
+position:fixed;
+inset:0;
+background:#00193f;
+display:none;
+align-items:center;
+justify-content:center;
+text-align:center;
+z-index:9999;
+padding:40px;
 }
-ol {
-text-align: left;
-display: inline-block;
-margin-bottom: 20px;
+.desktop-lock div{
+max-width:520px;
 }
-.cta-button {
-display: inline-block;
-padding: 15px 30px;
-background-color: #ffb612; /* Walmart Yellow */
-color: #003087;
-text-decoration: none;
-font-weight: bold;
-border-radius: 8px;
-transition: all 0.3s ease;
+.desktop-lock h2{
+font-weight:600;
+margin-bottom:12px;
 }
-.cta-button:hover {
-background-color: #ffc845;
+.desktop-lock p{
+opacity:.85;
+line-height:1.6;
 }
-/* Sections */
-section {
-padding: 30px 20px;
-text-align: center;
+
+/* ===== BACKGROUND LIGHT MOTION ===== */
+.bg-glow{
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle, rgba(255,182,18,.25), transparent 60%);
+top:-200px;
+right:-200px;
+filter:blur(40px);
+animation:float 14s infinite alternate ease-in-out;
 }
-.leaderboard, .comments, .stats, .faq {
-background: #fff;
-margin: 20px auto;
-padding: 20px;
-border-radius: 12px;
-max-width: 500px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+@keyframes float{
+to{transform:translate(-80px,120px)}
 }
-h2 {
-color: #003087;
-margin-bottom: 15px;
+
+/* ===== LAYOUT ===== */
+.container{
+max-width:620px;
+margin:auto;
+padding:64px 22px 80px;
+position:relative;
+z-index:2;
 }
-/* Stats */
-.stat-item {
-display: flex;
-justify-content: space-between;
-margin: 10px 0;
-font-weight: bold;
-font-size: 1.1em;
+
+/* ===== HERO ===== */
+.event-label{
+display:inline-block;
+padding:8px 18px;
+border-radius:40px;
+background:rgba(255,255,255,.12);
+font-size:.85rem;
+letter-spacing:.04em;
 }
-/* FAQ */
-.faq-item {
-text-align: left;
-margin: 10px 0;
+
+h1{
+font-size:2.4rem;
+line-height:1.2;
+margin:22px 0 12px;
+font-weight:700;
 }
-.faq-item h3 {
-margin: 0 0 5px 0;
+
+.subtitle{
+color:var(--soft-white);
+font-size:1.05rem;
+line-height:1.6;
+max-width:520px;
 }
-/* Footer */
-footer {
-text-align: center;
-padding: 20px;
-background-color: #003087;
-color: #fff;
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
+
+/* ===== STEPS CARD ===== */
+.steps-card{
+margin-top:36px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(14px);
+border-radius:26px;
+padding:28px;
 }
-/* Mobile-only overlay for desktop users */
-#desktop-overlay {
-display: none;
-position: fixed;
-top:0; left:0;
-width: 100%; height: 100%;
-background: #003087;
-color: #fff;
-z-index: 9999;
-text-align: center;
-padding-top: 40vh;
-font-size: 1.5em;
+
+.step{
+display:flex;
+gap:16px;
+padding:18px 0;
+border-bottom:1px solid rgba(255,255,255,.18);
+}
+.step:last-child{border-bottom:none}
+
+.step-index{
+min-width:36px;
+height:36px;
+border-radius:50%;
+background:var(--walmart-yellow);
+color:var(--walmart-blue);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+}
+
+.step-text{
+line-height:1.5;
+}
+
+/* ===== CTA ===== */
+.cta{
+margin-top:26px;
+display:block;
+text-align:center;
+padding:18px;
+border-radius:16px;
+background:linear-gradient(135deg,#ffb612,#ffd56a);
+color:var(--walmart-blue);
+font-weight:700;
+font-size:1.1rem;
+text-decoration:none;
+box-shadow:0 12px 40px rgba(255,182,18,.35);
+}
+
+/* ===== STATS ===== */
+.stats{
+margin-top:44px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+.stat{
+background:var(--white);
+color:var(--walmart-blue);
+border-radius:22px;
+padding:22px;
+text-align:center;
+}
+.stat strong{
+font-size:1.9rem;
+display:block;
+}
+
+/* ===== ACTIVITY ===== */
+.activity{
+margin-top:46px;
+background:rgba(255,255,255,.1);
+border-radius:26px;
+padding:26px;
+}
+.activity h3{
+margin:0 0 14px;
+font-weight:600;
+}
+.activity ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+.activity li{
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.18);
+opacity:.92;
+}
+
+/* ===== FAQ ===== */
+.faq{
+margin-top:46px;
+background:var(--white);
+color:var(--walmart-blue);
+border-radius:26px;
+padding:28px;
+}
+.faq strong{
+display:block;
+margin-bottom:8px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+margin-top:54px;
+text-align:center;
+font-size:.85rem;
+opacity:.8;
 }
 </style>
 </head>
+
 <body>
-<!-- Mobile-only overlay -->
-<div id="desktop-overlay">
-<p>Please claim your Gift Card from your mobile device!</p>
+
+<div class="desktop-lock" id="desktopLock">
+<div>
+<h2>Mobile access required</h2>
+<p>
+This holiday event is optimized for mobile participation.
+Please continue using a mobile device to access the experience.
+</p>
+</div>
 </div>
 
-<header>
-<div class="hero">
-<h1>Want to claim your Walmart Gift Card?</h1>
-<p>Follow these 3 easy steps:</p>
-<ol>
-<li>Complete surveys</li>
-<li>Enter email & basic info</li>
-<li>Complete the recommended deals</li>
-</ol>
-<a href="https://trkio.org/aff_c?offer_id=1525&aff_id=64120" class="cta-button">Click Here</a>
-</div>
-</header>
+<div class="bg-glow"></div>
 
-<!-- Leaderboard -->
-<section class="leaderboard">
-<h2>Top Participants</h2>
-<ul id="leaderboard-list">
-<li>Anna – 5 Gift Cards</li>
-<li>John – 3 Gift Cards</li>
-<li>Maria – 2 Gift Cards</li>
+<div class="container">
+
+<span class="event-label">Holiday Gift Card Event</span>
+
+<h1>Claim Your Walmart Gift Card</h1>
+<p class="subtitle">
+A limited seasonal opportunity designed for qualified participants.
+Join thousands currently completing the holiday reward flow.
+</p>
+
+<div class="steps-card">
+<div class="step">
+<div class="step-index">1</div>
+<div class="step-text">Complete short surveys</div>
+</div>
+<div class="step">
+<div class="step-index">2</div>
+<div class="step-text">Enter email and basic information</div>
+</div>
+<div class="step">
+<div class="step-index">3</div>
+<div class="step-text">Complete the recommended deals</div>
+</div>
+
+<a class="cta" href="https://trkio.org/aff_c?offer_id=1525&aff_id=64120">
+Click Here
+</a>
+</div>
+
+<div class="stats">
+<div class="stat">
+<strong id="claimed">387</strong>
+Claimed today
+</div>
+<div class="stat">
+<strong id="active">1,248</strong>
+Active participants
+</div>
+</div>
+
+<div class="activity">
+<h3>Recent activity</h3>
+<ul id="activityFeed">
+<li>Participant completed final step</li>
+<li>Reward successfully unlocked</li>
+<li>New participant joined the event</li>
 </ul>
-</section>
-
-<!-- Comments feed -->
-<section class="comments">
-<h2>What people are saying</h2>
-<ul id="comments-list">
-<li>"I just got my Walmart Gift Card after completing 5 deals!"</li>
-<li>"Claimed mine instantly, super easy!"</li>
-<li>"Love this holiday promo, so fun!"</li>
-</ul>
-</section>
-
-<!-- Gift Card Stats -->
-<section class="stats">
-<h2>Gift Card Stats</h2>
-<div class="stat-item">
-<p>Gift Cards Claimed Today:</p>
-<span id="claimed-today">387</span>
 </div>
-<div class="stat-item">
-<p>Active Participants:</p>
-<span id="active-participants">1,245</span>
-</div>
-</section>
 
-<!-- FAQ -->
-<section class="faq">
-<h2>Frequently Asked Questions</h2>
-<div class="faq-item">
-<h3>What do I need to do to claim the Gift Card?</h3>
-<p>Sign up, provide your email & basic info, then complete the recommended deals.</p>
+<div class="faq">
+<strong>What do I need to do to claim the gift card?</strong>
+Sign up using your email and basic information, then complete the
+recommended deals shown during the process.
 </div>
-</section>
 
-<!-- Trusted & Secure -->
 <footer>
-<div class="trust">
-<p>✅ Trusted & Secure</p>
-<p>✅ Safe & Easy to Use</p>
-<p>🎄 Happy Holidays!</p>
-</div>
+Secure participation • Encrypted data • Verified holiday promotion
 </footer>
 
+</div>
+
 <script>
-// Mobile-only detection
-if (window.innerWidth > 768) {
-document.body.style.display = "none";
-document.getElementById("desktop-overlay").style.display = "block";
+if(window.innerWidth > 768){
+document.getElementById("desktopLock").style.display = "flex";
 }
 
-// Animate gift card stats
-let claimedToday = document.getElementById("claimed-today");
-let activeParticipants = document.getElementById("active-participants");
-
-function animateCounter(element, target) {
-let count = 0;
-let step = Math.ceil(target / 100);
-let interval = setInterval(() => {
-count += step;
-if (count >= target) {
-count = target;
-clearInterval(interval);
-}
-element.textContent = count.toLocaleString();
-}, 20);
-}
-
-animateCounter(claimedToday, 387);
-animateCounter(activeParticipants, 1245);
-
-// Add dynamic comments
-const commentsList = document.getElementById("comments-list");
-const newComments = [
-"I just claimed my Gift Card – so fast!",
-"Holiday deal is amazing!",
-"Easy and fun to participate!"
+const feed = document.getElementById("activityFeed");
+const messages = [
+"Participant completed recommended deals",
+"Reward unlocked successfully",
+"Verification completed",
+"New participant joined the event"
 ];
-let i = 0;
-setInterval(() => {
+
+setInterval(()=>{
 const li = document.createElement("li");
-li.textContent = newComments[i % newComments.length];
-commentsList.appendChild(li);
-if(commentsList.children.length > 5) commentsList.removeChild(commentsList.children[0]);
-i++;
-}, 4000);
+li.textContent = messages[Math.floor(Math.random()*messages.length)];
+feed.prepend(li);
+if(feed.children.length > 4) feed.removeChild(feed.lastChild);
+}, 4200);
 </script>
+
 </body>
-  </html>
+</html>
