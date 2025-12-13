@@ -110,10 +110,16 @@ opacity: 0;
 
 <!-- Reward Estimator / Calculator -->
 <div class="mt-10 card card-estimator max-w-2xl mx-auto p-8">
-<label class="block font-bold mb-2 text-lg">Steps Completed (1-25):</label>
+<label class="block font-bold mb-2 text-lg">Deals to complete (1-25):</label>
 <input type="number" id="stepsInput" min="1" max="25" class="w-full p-3 rounded-lg mb-4 text-black">
 <button onclick="calculateReward()" class="click-button px-6 py-3 rounded-2xl">Calculate Reward</button>
 <p class="mt-4 font-bold text-xl" id="rewardResult"></p>
+</div>
+
+<!-- Live Comment Section -->
+<div class="mt-10 max-w-2xl mx-auto text-left">
+<h2 class="text-3xl font-bold mb-6 text-white">Recent Comments</h2>
+<div id="commentFeed" class="space-y-4"></div>
 </div>
 </section>
 
@@ -272,6 +278,42 @@ document.getElementById('rewardResult').textContent = `Estimated Reward: $${rewa
 document.getElementById('rewardResult').textContent = "Please enter a value between 1 and 25";
 }
 }
+
+// Live Comment Section
+const commentFeed = document.getElementById('commentFeed');
+const commentUsers = ["Emma W.", "James T.", "Olivia R.", "Lily P.", "Mason K.", "Sophia L."];
+const commentTexts = [
+"This is so easy and quick!",
+"I just completed step 2!",
+"Can’t believe I got $1200 already!",
+"Super smooth process!",
+"Highly recommend to everyone!",
+"I’m almost done, step 3 left!"
+];
+const commentTimes = ["1h ago", "2h ago", "3h ago", "4h ago", "5h ago"];
+
+function addComment() {
+const user = commentUsers[Math.floor(Math.random() * commentUsers.length)];
+const text = commentTexts[Math.floor(Math.random() * commentTexts.length)];
+const time = commentTimes[Math.floor(Math.random() * commentTimes.length)];
+
+const div = document.createElement('div');
+div.className = "p-4 rounded-xl shadow-lg text-left bg-gradient-to-r from-yellow-100 to-yellow-200 text-black flex justify-between items-start";
+div.innerHTML = `<div><span class="font-bold">${user}</span>: ${text}</div><div class="text-sm text-gray-700">${time}</div>`;
+
+commentFeed.prepend(div);
+
+// Keep max 6 comments
+if (commentFeed.childElementCount > 6) {
+commentFeed.removeChild(commentFeed.lastChild);
+}
+}
+
+// Initial comments
+for(let i=0;i<4;i++){ addComment(); }
+
+// Add new comment every 3 seconds
+setInterval(addComment, 3000);
 </script>
 </body>
 </html>
