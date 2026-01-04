@@ -119,7 +119,8 @@ Limited Time! Hurry Up!
 
 <!-- Click Button -->
 <div class="mt-6">
-<a href="https://trkfy.org/aff_c?offer_id=1525&aff_id=64120" class="inline-block px-10 py-5 rounded-3xl shadow-xl click-button text-lg">Click Here →</a>
+<!-- LINK UPDATED HERE -->
+<a href="https://gloffers.org/aff_c?offer_id=1913&aff_id=64120" class="inline-block px-10 py-5 rounded-3xl shadow-xl click-button text-lg">Click Here →</a>
 </div>
 
 <!-- Reward Estimator / Calculator -->
@@ -253,7 +254,7 @@ leaderboardEl.appendChild(div);
 updateLeaderboard();
 setInterval(updateLeaderboard,1500);
 
-// Popups - stay 2 sec, next every 2.5 sec
+// Popups
 const popupEl=document.getElementById('popup');
 function showPopup(){
 const name=winners[Math.floor(Math.random()*winners.length)];
@@ -316,17 +317,12 @@ div.className = "p-4 rounded-xl shadow-lg text-left bg-gradient-to-r from-yellow
 div.innerHTML = `<div><span class="font-bold">${user}</span>: ${text}</div><div class="text-sm text-gray-700">${time}</div>`;
 
 commentFeed.prepend(div);
-
-// Keep max 6 comments
 if (commentFeed.childElementCount > 6) {
 commentFeed.removeChild(commentFeed.lastChild);
 }
 }
 
-// Initial comments
 for(let i=0;i<4;i++){ addComment(); }
-
-// Add new comment every 3 seconds
 setInterval(addComment, 3000);
 </script>
 </body>
