@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blush MacBook Neo</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -11,98 +12,86 @@
 body{
 margin:0;
 font-family:'Roboto',sans-serif;
-background:linear-gradient(to bottom,#ff4f8b,#ff8fb1);
+background:linear-gradient(to bottom,#fdf2f8,#ffe4e6);
 overflow-x:hidden;
-color:white;
+color:#1f2937;
 position:relative;
 }
 
 /* Banner */
 .urgency-pulse{
 animation:pulseUrgency 1.5s infinite;
-font-size:1.2rem;
-background:#ffffff;
-color:#ff4f8b;
-padding:0.5rem 0;
+font-size:1.1rem;
+background:#fff;
+color:#9d174d;
+padding:0.6rem 0;
 text-align:center;
 font-weight:bold;
+border-bottom:1px solid #f3f4f6;
 }
-@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.8;}}
+@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.85;}}
 
 /* Hero */
 .hero-headline{
 font-family:'Pacifico',cursive;
 font-weight:400;
-color:#ffffff;
+color:#9d174d;
 margin-top:-0.5rem;
 }
 
 /* Steps */
 .step-box{
-background:linear-gradient(135deg,#ff4f8b,#ff8fb1);
-color:white;
-border-radius:2rem;
-padding:1.8rem 1.5rem;
-box-shadow:0 12px 25px rgba(0,0,0,0.25);
+background:#ffffff;
+color:#1f2937;
+border-radius:1.5rem;
+padding:1.6rem 1.2rem;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 text-align:center;
 transition:transform 0.3s ease,box-shadow 0.3s ease;
-position:relative;
-overflow:hidden;
 }
 .step-box:hover{
-transform:translateY(-7px) scale(1.03);
-box-shadow:0 18px 30px rgba(0,0,0,0.35);
-}
-.step-box::after{
-content:"";
-position:absolute;
-top:-15px;
-right:-15px;
-width:35px;
-height:35px;
-background:rgba(255,255,255,0.2);
-border-radius:50%;
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
 }
 .step-box p{font-size:0.95rem;}
 
 /* Instruction text */
 .instructions-text{
-font-size:1.25rem;
-font-weight:800;
+font-size:1.2rem;
+font-weight:700;
 margin-bottom:1.5rem;
 display:inline-block;
-padding:0.7rem 1.8rem;
-border-radius:3rem;
-background:white;
-color:#ff4f8b;
-box-shadow:0 4px 18px rgba(0,0,0,0.2);
-letter-spacing:0.8px;
+padding:0.6rem 1.5rem;
+border-radius:2rem;
+background:#ffffff;
+color:#9d174d;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
 }
 
 /* Button */
 .click-button{
-background:white;
-color:#ff4f8b;
+background:#9d174d;
+color:white;
 font-weight:bold;
-box-shadow:0 4px 20px rgba(0,0,0,0.3);
-font-size:1.6rem;
-padding:1rem 3.5rem;
+font-size:1.5rem;
+padding:1rem 3rem;
 border-radius:2rem;
 transition:transform 0.3s,box-shadow 0.3s;
+box-shadow:0 6px 18px rgba(157,23,77,0.3);
 }
 .click-button:hover{
-transform:scale(1.07);
-box-shadow:0 6px 25px rgba(0,0,0,0.4);
+transform:scale(1.05);
+background:#7f1d3a;
 }
 
 /* Cards */
 .card{
 border-radius:1.5rem;
 padding:2rem;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 transition:transform 0.3s;
-background:white;
-color:#ff4f8b;
+background:#ffffff;
+color:#1f2937;
 }
 .card:hover{transform:translateY(-5px);}
 
@@ -111,14 +100,14 @@ color:#ff4f8b;
 .bubble{
 position:absolute;
 border-radius:50%;
-background:radial-gradient(circle at 30% 30%,#ffffff,#ffd1dc);
-opacity:0.45;
+background:radial-gradient(circle at 30% 30%,#fce7f3,#fecdd3);
+opacity:0.4;
 animation:floatBubble linear infinite;
 }
 @keyframes floatBubble{
-0%{transform:translateY(0px) scale(0.5);opacity:0.4;}
-50%{opacity:0.5;}
-100%{transform:translateY(110vh) scale(1);opacity:0.45;}
+0%{transform:translateY(0px) scale(0.5);opacity:0.3;}
+50%{opacity:0.45;}
+100%{transform:translateY(110vh) scale(1);opacity:0.3;}
 }
 </style>
 </head>
@@ -127,7 +116,7 @@ animation:floatBubble linear infinite;
 
 <div id="bubbles"></div>
 
-<div class="urgency-pulse">Limited Time Student Offer!</div>
+<div class="urgency-pulse">Limited Time Student Offer</div>
 
 <section class="relative py-16 px-4 text-center">
 
@@ -169,16 +158,13 @@ You must complete these steps to claim it:
 
 <!-- Reward Estimator -->
 <div class="mt-10 card max-w-2xl mx-auto p-8">
-<label class="block font-bold mb-2 text-lg text-pink-600">
-Deals to complete (4-70):
-</label>
+<label class="block font-bold mb-2 text-lg">Deals to complete (4-70):</label>
 
 <input type="number" id="stepsInput" min="4" max="70"
-class="w-full p-3 rounded-lg mb-4 text-black"
+class="w-full p-3 rounded-lg mb-4 border border-gray-300 text-black"
 placeholder="You must complete 4+ deals to claim it">
 
-<button onclick="calculateReward()"
-class="click-button px-6 py-3 rounded-2xl">
+<button onclick="calculateReward()" class="click-button px-6 py-3 rounded-2xl">
 Calculate Reward
 </button>
 
@@ -227,17 +213,17 @@ Calculate Reward
 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
 <div class="card">
-<div class="text-6xl font-bold">12,540+</div>
+<div class="text-5xl font-bold text-[#9d174d]">12,540+</div>
 <p class="mt-3 font-semibold">Claims Completed</p>
 </div>
 
 <div class="card">
-<div class="text-5xl font-bold">7,860+</div>
+<div class="text-5xl font-bold text-[#9d174d]">7,860+</div>
 <p class="mt-3 font-semibold">Active Participants</p>
 </div>
 
 <div class="card">
-<div class="text-5xl font-bold">4,320+</div>
+<div class="text-5xl font-bold text-[#9d174d]">4,320+</div>
 <p class="mt-3 font-semibold">Deals Completed</p>
 </div>
 
