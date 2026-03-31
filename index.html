@@ -11,100 +11,114 @@
 body{
 margin:0;
 font-family:'Roboto',sans-serif;
-background:linear-gradient(to bottom,#f5f5f7,#e5e5ea);
-color:#1d1d1f;
+background:linear-gradient(to bottom,#CC0000,#990000);
 overflow-x:hidden;
+color:white;
+position:relative;
 }
 
 /* Banner */
 .urgency-pulse{
 animation:pulseUrgency 1.5s infinite;
-font-size:1.1rem;
-background:#1d1d1f;
-color:#ffffff;
+font-size:1.2rem;
+background:#ffffff;
+color:#CC0000;
 padding:0.5rem 0;
 text-align:center;
 font-weight:bold;
 }
-@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.85;}}
+@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.8;}}
 
-/* Headline */
+/* Hero */
 .hero-headline{
 font-family:'Pacifico',cursive;
-color:#1d1d1f;
+font-weight:400;
+color:#ffffff;
+margin-top:-0.5rem;
 }
 
 /* Steps */
 .step-box{
-background:#ffffff;
-border-radius:1.5rem;
+background:linear-gradient(135deg,#990000,#CC0000);
+color:white;
+border-radius:2rem;
 padding:1.8rem 1.5rem;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+box-shadow:0 12px 25px rgba(0,0,0,0.25);
 text-align:center;
-transition:0.3s;
+transition:transform 0.3s ease,box-shadow 0.3s ease;
+position:relative;
+overflow:hidden;
 }
 .step-box:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 25px rgba(0,0,0,0.12);
+transform:translateY(-7px) scale(1.03);
+box-shadow:0 18px 30px rgba(0,0,0,0.35);
 }
+.step-box::after{
+content:"";
+position:absolute;
+top:-15px;
+right:-15px;
+width:35px;
+height:35px;
+background:rgba(255,255,255,0.2);
+border-radius:50%;
+}
+.step-box p{font-size:0.95rem;}
 
-/* Instruction */
+/* Instruction text */
 .instructions-text{
-font-size:1.2rem;
-font-weight:700;
+font-size:1.25rem;
+font-weight:800;
 margin-bottom:1.5rem;
-padding:0.6rem 1.6rem;
-border-radius:2rem;
-background:#1d1d1f;
-color:#ffffff;
 display:inline-block;
+padding:0.7rem 1.8rem;
+border-radius:3rem;
+background:linear-gradient(135deg,#ffffff,#f2f2f2);
+color:#CC0000;
+box-shadow:0 4px 18px rgba(255,255,255,0.4);
+letter-spacing:0.8px;
 }
 
 /* Button */
 .click-button{
-background:#0071e3;
-color:#ffffff;
+background:linear-gradient(135deg,#ffffff,#f2f2f2);
+color:#CC0000;
 font-weight:bold;
-font-size:1.4rem;
-padding:0.9rem 3rem;
+box-shadow:0 4px 20px rgba(0,0,0,0.3);
+font-size:1.6rem;
+padding:1rem 3.5rem;
 border-radius:2rem;
-transition:0.3s;
-box-shadow:0 4px 15px rgba(0,113,227,0.3);
+transition:transform 0.3s,box-shadow 0.3s;
 }
 .click-button:hover{
-background:#005bb5;
-transform:scale(1.05);
+transform:scale(1.07);
+box-shadow:0 6px 25px rgba(0,0,0,0.4);
 }
 
 /* Cards */
 .card{
 border-radius:1.5rem;
 padding:2rem;
-background:#ffffff;
-color:#1d1d1f;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:transform 0.3s;
+background:white;
+color:#CC0000;
 }
 .card:hover{transform:translateY(-5px);}
 
 /* Bubbles */
-#bubbles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-}
+#bubbles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
 .bubble{
 position:absolute;
 border-radius:50%;
-background:rgba(0,0,0,0.05);
+background:radial-gradient(circle at 30% 30%,#ffffff,#f2f2f2);
+opacity:0.45;
 animation:floatBubble linear infinite;
 }
 @keyframes floatBubble{
-0%{transform:translateY(0px) scale(0.5);}
-100%{transform:translateY(110vh) scale(1);}
+0%{transform:translateY(0px) scale(0.5);opacity:0.4;}
+50%{opacity:0.5;}
+100%{transform:translateY(110vh) scale(1);opacity:0.45;}
 }
 </style>
 </head>
@@ -113,15 +127,15 @@ animation:floatBubble linear infinite;
 
 <div id="bubbles"></div>
 
-<div class="urgency-pulse">Limited Time Offer</div>
+<div class="urgency-pulse">Limited Time! Hurry Up!</div>
 
-<section class="py-16 px-4 text-center">
+<section class="relative py-16 px-4 text-center">
 
-<h1 class="text-4xl md:text-6xl mb-6 hero-headline">
+<h1 class="text-5xl md:text-7xl mb-6 hero-headline">
 Want a giftcard for iPhone, iPad or Macbook?
 </h1>
 
-<p class="instructions-text">Complete these steps to get yours:</p>
+<p class="instructions-text">You must complete these steps to claim it:</p>
 
 <div class="grid md:grid-cols-4 gap-6 mb-6 max-w-6xl mx-auto">
 
@@ -137,12 +151,12 @@ Want a giftcard for iPhone, iPad or Macbook?
 
 <div class="step-box">
 <p class="font-bold mb-1">Step 3</p>
-<p>Complete 4-5 deals</p>
+<p>Complete 4-5 sponsored deals</p>
 </div>
 
 <div class="step-box">
 <p class="font-bold mb-1">Step 4</p>
-<p>Receive your reward</p>
+<p>Enjoy your gift card</p>
 </div>
 
 </div>
@@ -154,37 +168,42 @@ Claim Now
 </div>
 
 <!-- Reward Estimator -->
-<div class="mt-10 card max-w-2xl mx-auto">
+<div class="mt-10 card max-w-2xl mx-auto p-8">
 <label class="block font-bold mb-2 text-lg">Deals to complete (4-70):</label>
-<input type="number" id="stepsInput" min="4" max="70" class="w-full p-3 rounded-lg mb-4 border">
-<button onclick="calculateReward()" class="click-button px-6 py-3">Calculate Reward</button>
+<input type="number" id="stepsInput" min="4" max="70" class="w-full p-3 rounded-lg mb-4 text-black" placeholder="You must complete 4+ deals to claim it">
+<button onclick="calculateReward()" class="click-button px-6 py-3 rounded-2xl">Calculate Reward</button>
 <p class="mt-4 font-bold text-xl" id="rewardResult"></p>
 </div>
 
 <!-- FAQ -->
 <section class="py-10 px-4 text-center">
-<h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+<h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
 
 <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
 
 <div class="card faq-item cursor-pointer">
 <p class="font-bold mb-2">Is my information secure?</p>
-<p class="faq-content hidden">Yes, your information is protected.</p>
+<p class="faq-content hidden">All information is encrypted and stored securely. We never share your data.</p>
 </div>
 
 <div class="card faq-item cursor-pointer">
 <p class="font-bold mb-2">How do I claim my reward?</p>
-<p class="faq-content hidden">Complete the required steps.</p>
+<p class="faq-content hidden">Complete the steps shown above and finish the required deals.</p>
+</div>
+
+<div class="card faq-item cursor-pointer">
+<p class="font-bold mb-2">Can I apply from desktop?</p>
+<p class="faq-content hidden">Desktop applications are not supported; please use mobile.</p>
 </div>
 
 <div class="card faq-item cursor-pointer">
 <p class="font-bold mb-2">Do I have to pay anything?</p>
-<p class="faq-content hidden">No payment required.</p>
+<p class="faq-content hidden">No payment is required.</p>
 </div>
 
 <div class="card faq-item cursor-pointer">
-<p class="font-bold mb-2">When will I receive it?</p>
-<p class="faq-content hidden">After completing deals.</p>
+<p class="font-bold mb-2">When will I receive the gift card?</p>
+<p class="faq-content hidden">After completing the required deals, your reward will be sent to your email.</p>
 </div>
 
 </div>
@@ -192,29 +211,66 @@ Claim Now
 
 <!-- Stats -->
 <section class="py-20 px-4 text-center">
-<h2 class="text-3xl font-bold mb-12">Stats</h2>
+
+<h2 class="text-4xl font-bold mb-12">Stats & Milestones</h2>
 
 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
 <div class="card">
-<div class="text-5xl font-bold">12,540+</div>
-<p class="mt-3">Claims Completed</p>
+<div class="text-6xl font-bold">12,540+</div>
+<p class="mt-3 font-semibold">Claims Completed</p>
 </div>
 
 <div class="card">
 <div class="text-5xl font-bold">7,860+</div>
-<p class="mt-3">Active Users</p>
+<p class="mt-3 font-semibold">Active Participants</p>
 </div>
 
 <div class="card">
 <div class="text-5xl font-bold">4,320+</div>
-<p class="mt-3">Deals Completed</p>
+<p class="mt-3 font-semibold">Deals Completed</p>
 </div>
 
 </div>
 </section>
 
-<footer class="py-12 text-center">
+<!-- Leaderboard -->
+<section class="py-20 px-4 text-center">
+
+<h2 class="text-4xl font-bold mb-12">Recent Winners</h2>
+
+<div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="leaderboard"></div>
+
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 px-4 text-center">
+
+<h2 class="text-4xl font-bold mb-12">Testimonials</h2>
+
+<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+<div class="card">
+<p>"Received my gift card within 24 hours. Super smooth!"</p>
+<p class="font-bold mt-4">- Sarah W., California</p>
+</div>
+
+<div class="card">
+<p>"Fast, safe, and verified. Loved it!"</p>
+<p class="font-bold mt-4">- Michael B., New York</p>
+</div>
+
+<div class="card">
+<p>"Everything explained clearly, trusted and verified."</p>
+<p class="font-bold mt-4">- Emma R., Texas</p>
+</div>
+
+</div>
+
+</section>
+
+<footer class="py-12 px-4 text-center">
+<p class="mb-4">SSL Secured • Encrypted • Verified • 100% Safe</p>
 <p>© 2026</p>
 </footer>
 
@@ -225,10 +281,28 @@ item.querySelector('.faq-content').classList.toggle('hidden');
 });
 });
 
+const leaderboardEl=document.getElementById('leaderboard');
+const winners=["Emma, NY","James, TX","Lily, FL","Olivia, CA","Mason, IL","Sophia, WA"];
+const rewards=["$1200","$850","$1500","$950","$1100","$700"];
+
+function updateLeaderboard(){
+leaderboardEl.innerHTML='';
+for(let i=0;i<5;i++){
+const name=winners[Math.floor(Math.random()*winners.length)];
+const reward=rewards[Math.floor(Math.random()*rewards.length)];
+const div=document.createElement('div');
+div.className="card flex justify-between items-center p-6";
+div.innerHTML=`<p class="font-semibold">${name} claimed ${reward}</p>`;
+leaderboardEl.appendChild(div);
+}
+}
+updateLeaderboard();
+setInterval(updateLeaderboard,1500);
+
 function calculateReward(){
 const steps=parseInt(document.getElementById('stepsInput').value);
 if(steps<4){
-document.getElementById('rewardResult').textContent="Minimum 4 deals required";
+document.getElementById('rewardResult').textContent="You must complete 4+ deals to claim it";
 return;
 }
 const reward=Math.round((steps/4)*150);
@@ -236,18 +310,20 @@ document.getElementById('rewardResult').textContent=`Estimated Reward: $${reward
 }
 
 const bubblesContainer=document.getElementById('bubbles');
-function createBubble(){
+function createBubble(topPosition=-50){
 const bubble=document.createElement('div');
 bubble.className='bubble';
 const size=Math.random()*30+20;
 bubble.style.width=size+'px';
 bubble.style.height=size+'px';
 bubble.style.left=Math.random()*100+'vw';
-bubble.style.animationDuration=(40+Math.random()*20)+'s';
+bubble.style.top=topPosition+'px';
+bubble.style.animationDuration=(50+Math.random()*30)+'s';
 bubblesContainer.appendChild(bubble);
-setTimeout(()=>bubble.remove(),60000);
+bubble.addEventListener('animationend',()=>bubble.remove());
 }
-setInterval(createBubble,500);
+for(let i=0;i<30;i++){createBubble(Math.random()*window.innerHeight);}
+setInterval(()=>createBubble(),500);
 </script>
 
 </body>
