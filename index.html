@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Want a Gift Card for iPhone, iPad or MacBook?</title>
+<title>Want a Gift Card?</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -11,104 +11,95 @@
 body{
 margin:0;
 font-family:'Roboto',sans-serif;
-background:linear-gradient(to bottom,#CC0000,#990000);
+background:linear-gradient(to bottom,#f5f5f7,#e5e5ea);
+color:#1d1d1f;
 overflow-x:hidden;
-color:white;
-position:relative;
 }
 
 /* Banner */
 .urgency-pulse{
 animation:pulseUrgency 1.5s infinite;
-font-size:1.2rem;
-background:#ffffff;
-color:#CC0000;
+font-size:1.1rem;
+background:#1d1d1f;
+color:#ffffff;
 padding:0.5rem 0;
 text-align:center;
 font-weight:bold;
 }
-@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.8;}}
+@keyframes pulseUrgency{0%,100%{opacity:1;}50%{opacity:0.85;}}
 
-/* Hero */
+/* Headline */
 .hero-headline{
 font-family:'Pacifico',cursive;
-color:#ffffff;
-margin-top:-0.5rem;
+color:#1d1d1f;
 }
 
 /* Steps */
 .step-box{
-background:linear-gradient(135deg,#990000,#CC0000);
-color:white;
-border-radius:2rem;
+background:#ffffff;
+border-radius:1.5rem;
 padding:1.8rem 1.5rem;
-box-shadow:0 12px 25px rgba(0,0,0,0.25);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 text-align:center;
 transition:0.3s;
-position:relative;
-overflow:hidden;
 }
 .step-box:hover{
-transform:translateY(-7px) scale(1.03);
-}
-.step-box::after{
-content:"";
-position:absolute;
-top:-15px;
-right:-15px;
-width:35px;
-height:35px;
-background:rgba(255,255,255,0.2);
-border-radius:50%;
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
 }
 
 /* Instruction */
 .instructions-text{
-font-size:1.25rem;
-font-weight:800;
+font-size:1.2rem;
+font-weight:700;
 margin-bottom:1.5rem;
+padding:0.6rem 1.6rem;
+border-radius:2rem;
+background:#1d1d1f;
+color:#ffffff;
 display:inline-block;
-padding:0.7rem 1.8rem;
-border-radius:3rem;
-background:#ffffff;
-color:#CC0000;
-box-shadow:0 4px 18px rgba(255,255,255,0.3);
 }
 
 /* Button */
 .click-button{
-background:#ffffff;
-color:#CC0000;
+background:#0071e3;
+color:#ffffff;
 font-weight:bold;
-box-shadow:0 4px 20px rgba(0,0,0,0.3);
-font-size:1.6rem;
-padding:1rem 3.5rem;
+font-size:1.4rem;
+padding:0.9rem 3rem;
 border-radius:2rem;
 transition:0.3s;
+box-shadow:0 4px 15px rgba(0,113,227,0.3);
 }
 .click-button:hover{
-transform:scale(1.07);
-box-shadow:0 6px 25px rgba(0,0,0,0.4);
+background:#005bb5;
+transform:scale(1.05);
 }
 
 /* Cards */
 .card{
 border-radius:1.5rem;
 padding:2rem;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+background:#ffffff;
+color:#1d1d1f;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 transition:0.3s;
-background:white;
-color:#CC0000;
 }
 .card:hover{transform:translateY(-5px);}
 
 /* Bubbles */
-#bubbles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+#bubbles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
 .bubble{
 position:absolute;
 border-radius:50%;
-background:rgba(255,255,255,0.3);
-opacity:0.4;
+background:rgba(0,0,0,0.05);
 animation:floatBubble linear infinite;
 }
 @keyframes floatBubble{
@@ -122,13 +113,15 @@ animation:floatBubble linear infinite;
 
 <div id="bubbles"></div>
 
-<div class="urgency-pulse">Limited Time! Hurry Up!</div>
+<div class="urgency-pulse">Limited Time Offer</div>
 
-<section class="relative py-16 px-4 text-center">
+<section class="py-16 px-4 text-center">
 
-<h1 class="text-5xl md:text-7xl mb-6 hero-headline">Want a Target Gift Card?</h1>
+<h1 class="text-4xl md:text-6xl mb-6 hero-headline">
+Want a giftcard for iPhone, iPad or Macbook?
+</h1>
 
-<p class="instructions-text">You must complete these steps to claim it:</p>
+<p class="instructions-text">Complete these steps to get yours:</p>
 
 <div class="grid md:grid-cols-4 gap-6 mb-6 max-w-6xl mx-auto">
 
@@ -144,47 +137,44 @@ animation:floatBubble linear infinite;
 
 <div class="step-box">
 <p class="font-bold mb-1">Step 3</p>
-<p>Complete 4-5 sponsored deals</p>
+<p>Complete 4-5 deals</p>
 </div>
 
 <div class="step-box">
 <p class="font-bold mb-1">Step 4</p>
-<p>Enjoy your Target gift card</p>
+<p>Receive your reward</p>
 </div>
 
 </div>
 
 <div class="mt-6">
-<a href="https://trksy.org/aff_c?offer_id=1177&aff_id=64120" class="inline-block click-button">Claim Now</a>
+<a href="https://trksy.org/aff_c?offer_id=1177&aff_id=64120" target="_blank" class="inline-block click-button">
+Claim Now
+</a>
 </div>
 
 <!-- Reward Estimator -->
-<div class="mt-10 card max-w-2xl mx-auto p-8">
+<div class="mt-10 card max-w-2xl mx-auto">
 <label class="block font-bold mb-2 text-lg">Deals to complete (4-70):</label>
-<input type="number" id="stepsInput" min="4" max="70" class="w-full p-3 rounded-lg mb-4 text-black">
+<input type="number" id="stepsInput" min="4" max="70" class="w-full p-3 rounded-lg mb-4 border">
 <button onclick="calculateReward()" class="click-button px-6 py-3">Calculate Reward</button>
 <p class="mt-4 font-bold text-xl" id="rewardResult"></p>
 </div>
 
 <!-- FAQ -->
 <section class="py-10 px-4 text-center">
-<h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+<h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
 
 <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
 
 <div class="card faq-item cursor-pointer">
 <p class="font-bold mb-2">Is my information secure?</p>
-<p class="faq-content hidden">All information is encrypted and stored securely.</p>
+<p class="faq-content hidden">Yes, your information is protected.</p>
 </div>
 
 <div class="card faq-item cursor-pointer">
 <p class="font-bold mb-2">How do I claim my reward?</p>
-<p class="faq-content hidden">Complete the steps above.</p>
-</div>
-
-<div class="card faq-item cursor-pointer">
-<p class="font-bold mb-2">Can I apply from desktop?</p>
-<p class="faq-content hidden">Use mobile for best experience.</p>
+<p class="faq-content hidden">Complete the required steps.</p>
 </div>
 
 <div class="card faq-item cursor-pointer">
@@ -202,53 +192,23 @@ animation:floatBubble linear infinite;
 
 <!-- Stats -->
 <section class="py-20 px-4 text-center">
-<h2 class="text-4xl font-bold mb-12">Stats & Milestones</h2>
+<h2 class="text-3xl font-bold mb-12">Stats</h2>
 
 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
 <div class="card">
-<div class="text-6xl font-bold">12,540+</div>
-<p class="mt-3 font-semibold">Claims Completed</p>
+<div class="text-5xl font-bold">12,540+</div>
+<p class="mt-3">Claims Completed</p>
 </div>
 
 <div class="card">
 <div class="text-5xl font-bold">7,860+</div>
-<p class="mt-3 font-semibold">Active Participants</p>
+<p class="mt-3">Active Users</p>
 </div>
 
 <div class="card">
 <div class="text-5xl font-bold">4,320+</div>
-<p class="mt-3 font-semibold">Deals Completed</p>
-</div>
-
-</div>
-</section>
-
-<!-- Leaderboard -->
-<section class="py-20 px-4 text-center">
-<h2 class="text-4xl font-bold mb-12">Recent Winners</h2>
-<div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="leaderboard"></div>
-</section>
-
-<!-- Testimonials -->
-<section class="py-20 px-4 text-center">
-<h2 class="text-4xl font-bold mb-12">Testimonials</h2>
-
-<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-<div class="card">
-<p>"Received my gift card quickly!"</p>
-<p class="font-bold mt-4">- Sarah W.</p>
-</div>
-
-<div class="card">
-<p>"Fast and simple process."</p>
-<p class="font-bold mt-4">- Michael B.</p>
-</div>
-
-<div class="card">
-<p>"Worked exactly as expected."</p>
-<p class="font-bold mt-4">- Emma R.</p>
+<p class="mt-3">Deals Completed</p>
 </div>
 
 </div>
@@ -264,24 +224,6 @@ item.addEventListener('click',()=>{
 item.querySelector('.faq-content').classList.toggle('hidden');
 });
 });
-
-const leaderboardEl=document.getElementById('leaderboard');
-const winners=["Emma","James","Lily","Olivia","Mason","Sophia"];
-const rewards=["$1200","$850","$1500","$950","$1100","$700"];
-
-function updateLeaderboard(){
-leaderboardEl.innerHTML='';
-for(let i=0;i<5;i++){
-const name=winners[Math.floor(Math.random()*winners.length)];
-const reward=rewards[Math.floor(Math.random()*rewards.length)];
-const div=document.createElement('div');
-div.className="card flex justify-between items-center p-6";
-div.innerHTML=`<p class="font-semibold">${name} claimed ${reward}</p>`;
-leaderboardEl.appendChild(div);
-}
-}
-updateLeaderboard();
-setInterval(updateLeaderboard,1500);
 
 function calculateReward(){
 const steps=parseInt(document.getElementById('stepsInput').value);
