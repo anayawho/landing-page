@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Want a Gift Card?</title>
+<title>Want a Target Gift Card?</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -11,9 +12,9 @@
 body{
 margin:0;
 font-family:'Roboto',sans-serif;
-background:linear-gradient(to bottom,#CC0000,#990000);
+background:linear-gradient(to bottom,#ffffff,#f5f5f5);
 overflow-x:hidden;
-color:white;
+color:#111;
 position:relative;
 }
 
@@ -21,8 +22,8 @@ position:relative;
 .urgency-pulse{
 animation:pulseUrgency 1.5s infinite;
 font-size:1.2rem;
-background:#ffffff;
-color:#CC0000;
+background:#E11D48;
+color:white;
 padding:0.5rem 0;
 text-align:center;
 font-weight:bold;
@@ -33,25 +34,26 @@ font-weight:bold;
 .hero-headline{
 font-family:'Pacifico',cursive;
 font-weight:400;
-color:#ffffff;
+color:#E11D48;
 margin-top:-0.5rem;
 }
 
 /* Steps */
 .step-box{
-background:linear-gradient(135deg,#990000,#CC0000);
-color:white;
+background:linear-gradient(135deg,#ffffff,#f3f4f6);
+color:#111;
 border-radius:2rem;
 padding:1.8rem 1.5rem;
-box-shadow:0 12px 25px rgba(0,0,0,0.25);
+box-shadow:0 12px 25px rgba(0,0,0,0.1);
 text-align:center;
 transition:transform 0.3s ease,box-shadow 0.3s ease;
 position:relative;
 overflow:hidden;
+border:1px solid #e5e7eb;
 }
 .step-box:hover{
 transform:translateY(-7px) scale(1.03);
-box-shadow:0 18px 30px rgba(0,0,0,0.35);
+box-shadow:0 18px 30px rgba(0,0,0,0.2);
 }
 .step-box::after{
 content:"";
@@ -60,7 +62,7 @@ top:-15px;
 right:-15px;
 width:35px;
 height:35px;
-background:rgba(255,255,255,0.2);
+background:rgba(225,29,72,0.1);
 border-radius:50%;
 }
 .step-box p{font-size:0.95rem;}
@@ -73,18 +75,18 @@ margin-bottom:1.5rem;
 display:inline-block;
 padding:0.7rem 1.8rem;
 border-radius:3rem;
-background:linear-gradient(135deg,#ffffff,#f2f2f2);
-color:#CC0000;
-box-shadow:0 4px 18px rgba(255,255,255,0.4);
+background:#E11D48;
+color:white;
+box-shadow:0 4px 18px rgba(225,29,72,0.3);
 letter-spacing:0.8px;
 }
 
 /* Button */
 .click-button{
-background:linear-gradient(135deg,#ffffff,#f2f2f2);
-color:#CC0000;
+background:#E11D48;
+color:white;
 font-weight:bold;
-box-shadow:0 4px 20px rgba(0,0,0,0.3);
+box-shadow:0 4px 20px rgba(0,0,0,0.2);
 font-size:1.6rem;
 padding:1rem 3.5rem;
 border-radius:2rem;
@@ -92,17 +94,18 @@ transition:transform 0.3s,box-shadow 0.3s;
 }
 .click-button:hover{
 transform:scale(1.07);
-box-shadow:0 6px 25px rgba(0,0,0,0.4);
+box-shadow:0 6px 25px rgba(0,0,0,0.3);
 }
 
 /* Cards */
 .card{
 border-radius:1.5rem;
 padding:2rem;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 transition:transform 0.3s;
 background:white;
-color:#CC0000;
+color:#111;
+border:1px solid #e5e7eb;
 }
 .card:hover{transform:translateY(-5px);}
 
@@ -111,14 +114,14 @@ color:#CC0000;
 .bubble{
 position:absolute;
 border-radius:50%;
-background:radial-gradient(circle at 30% 30%,#ffffff,#f2f2f2);
-opacity:0.45;
+background:rgba(225,29,72,0.15);
+opacity:0.3;
 animation:floatBubble linear infinite;
 }
 @keyframes floatBubble{
-0%{transform:translateY(0px) scale(0.5);opacity:0.4;}
-50%{opacity:0.5;}
-100%{transform:translateY(110vh) scale(1);opacity:0.45;}
+0%{transform:translateY(0px) scale(0.5);opacity:0.3;}
+50%{opacity:0.4;}
+100%{transform:translateY(110vh) scale(1);opacity:0.2;}
 }
 </style>
 </head>
@@ -131,9 +134,7 @@ animation:floatBubble linear infinite;
 
 <section class="relative py-16 px-4 text-center">
 
-<h1 class="text-5xl md:text-7xl mb-6 hero-headline">
-Want a giftcard for iPhone, iPad or Macbook?
-</h1>
+<h1 class="text-5xl md:text-7xl mb-6 hero-headline">Want a Target Gift Card?</h1>
 
 <p class="instructions-text">You must complete these steps to claim it:</p>
 
@@ -156,15 +157,13 @@ Want a giftcard for iPhone, iPad or Macbook?
 
 <div class="step-box">
 <p class="font-bold mb-1">Step 4</p>
-<p>Enjoy your gift card</p>
+<p>Enjoy your Target gift card</p>
 </div>
 
 </div>
 
 <div class="mt-6">
-<a href="https://trksy.org/aff_c?offer_id=1177&aff_id=64120" target="_blank" class="inline-block click-button">
-Claim Now
-</a>
+<a href="https://trksy.org/aff_c?offer_id=1177&aff_id=64120" class="inline-block click-button">Claim Now</a>
 </div>
 
 <!-- Reward Estimator -->
@@ -209,95 +208,12 @@ Claim Now
 </div>
 </section>
 
-<!-- Stats -->
-<section class="py-20 px-4 text-center">
-
-<h2 class="text-4xl font-bold mb-12">Stats & Milestones</h2>
-
-<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-<div class="card">
-<div class="text-6xl font-bold">12,540+</div>
-<p class="mt-3 font-semibold">Claims Completed</p>
-</div>
-
-<div class="card">
-<div class="text-5xl font-bold">7,860+</div>
-<p class="mt-3 font-semibold">Active Participants</p>
-</div>
-
-<div class="card">
-<div class="text-5xl font-bold">4,320+</div>
-<p class="mt-3 font-semibold">Deals Completed</p>
-</div>
-
-</div>
-</section>
-
-<!-- Leaderboard -->
-<section class="py-20 px-4 text-center">
-
-<h2 class="text-4xl font-bold mb-12">Recent Winners</h2>
-
-<div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="leaderboard"></div>
-
-</section>
-
-<!-- Testimonials -->
-<section class="py-20 px-4 text-center">
-
-<h2 class="text-4xl font-bold mb-12">Testimonials</h2>
-
-<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-<div class="card">
-<p>"Received my gift card within 24 hours. Super smooth!"</p>
-<p class="font-bold mt-4">- Sarah W., California</p>
-</div>
-
-<div class="card">
-<p>"Fast, safe, and verified. Loved it!"</p>
-<p class="font-bold mt-4">- Michael B., New York</p>
-</div>
-
-<div class="card">
-<p>"Everything explained clearly, trusted and verified."</p>
-<p class="font-bold mt-4">- Emma R., Texas</p>
-</div>
-
-</div>
-
-</section>
-
-<footer class="py-12 px-4 text-center">
-<p class="mb-4">SSL Secured • Encrypted • Verified • 100% Safe</p>
-<p>© 2026</p>
-</footer>
-
 <script>
 document.querySelectorAll('.faq-item').forEach(item=>{
 item.addEventListener('click',()=>{
 item.querySelector('.faq-content').classList.toggle('hidden');
 });
 });
-
-const leaderboardEl=document.getElementById('leaderboard');
-const winners=["Emma, NY","James, TX","Lily, FL","Olivia, CA","Mason, IL","Sophia, WA"];
-const rewards=["$1200","$850","$1500","$950","$1100","$700"];
-
-function updateLeaderboard(){
-leaderboardEl.innerHTML='';
-for(let i=0;i<5;i++){
-const name=winners[Math.floor(Math.random()*winners.length)];
-const reward=rewards[Math.floor(Math.random()*rewards.length)];
-const div=document.createElement('div');
-div.className="card flex justify-between items-center p-6";
-div.innerHTML=`<p class="font-semibold">${name} claimed ${reward}</p>`;
-leaderboardEl.appendChild(div);
-}
-}
-updateLeaderboard();
-setInterval(updateLeaderboard,1500);
 
 function calculateReward(){
 const steps=parseInt(document.getElementById('stepsInput').value);
