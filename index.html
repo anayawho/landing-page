@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhode Skin Gift Card</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<title>Target Gift Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 body {
  margin:0;
- font-family:'Inter', sans-serif;
- background: linear-gradient(to bottom, #F5F3F0, #EAE6E1);
- color:#3C3835;
+ font-family:'Roboto',sans-serif;
+ background:linear-gradient(to bottom, #F4F6F9, #E4E8F0);
+ color:#1D252C;
  overflow-x:hidden;
  position:relative;
 }
@@ -19,33 +19,31 @@ body {
 /* Urgency Banner */
 .urgency-pulse {
  animation: pulseUrgency 1.5s infinite;
- font-size: 1.1rem;
- background: #2D2926;
- color: #F5F3F0;
- padding: 0.6rem 0;
+ font-size: 1.2rem;
+ background: #CC0000;
+ color: #FFFFFF;
+ padding: 0.5rem 0;
  text-align: center;
- font-weight: 500;
- letter-spacing: 0.5px;
+ font-weight: bold;
 }
 @keyframes pulseUrgency {0%,100%{opacity:1;}50%{opacity:0.85;}}
 
 /* Hero Font */
 .hero-headline { 
- font-family:'Playfair Display', serif; 
- font-style: italic;
- font-weight:500; 
- color:#2D2926; 
+ font-family:'Roboto', sans-serif; 
+ font-weight:900; 
+ color:#CC0000; 
  margin-top:-0.5rem; 
 }
 
 /* Step Boxes */
 .step-box {
- background: linear-gradient(135deg, #FFFFFF, #F0ECE8);
- color:#3C3835;
+ background: linear-gradient(135deg, #FFFFFF, #FDE8E8);
+ color:#1D252C;
  border-radius: 2rem;
  padding: 1.8rem 1.5rem;
- box-shadow: 0 12px 25px rgba(60, 56, 53, 0.06);
- border: 1px solid rgba(60, 56, 53, 0.08);
+ box-shadow: 0 12px 25px rgba(204, 0, 0, 0.12);
+ border: 1px solid rgba(204, 0, 0, 0.1);
  text-align: center;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
  position: relative;
@@ -53,63 +51,64 @@ body {
 }
 .step-box:hover {
  transform: translateY(-7px) scale(1.03);
- box-shadow: 0 18px 30px rgba(60, 56, 53, 0.12);
+ box-shadow: 0 18px 30px rgba(204, 0, 0, 0.2);
 }
 .step-box::after {
  content:"";
  position:absolute;
  top:-15px; right:-15px;
  width:35px; height:35px;
- background: rgba(60, 56, 53, 0.04);
+ background: rgba(204, 0, 0, 0.08);
  border-radius:50%;
 }
 .step-box p { font-size: 0.95rem; }
 
 /* Instruction Text */
 .instructions-text {
- font-size: 1.15rem;
- font-weight: 600;
+ font-size: 1.25rem;
+ font-weight: 800;
  margin-bottom: 1.5rem;
  display: inline-block;
  padding: 0.7rem 1.8rem;
  border-radius: 3rem;
- background: linear-gradient(135deg, #2D2926, #4A4440);
- color: #F5F3F0;
- text-shadow: 0 1px 2px rgba(0,0,0,0.2);
- box-shadow: 0 4px 18px rgba(45, 41, 38, 0.2);
- letter-spacing: 0.5px;
+ background: linear-gradient(135deg, #CC0000, #990000);
+ color: #FFFFFF;
+ text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+ box-shadow: 0 4px 18px rgba(204, 0, 0, 0.3);
+ letter-spacing: 0.8px;
  animation: glowText 2.5s ease-in-out infinite alternate;
 }
 @keyframes glowText {
- 0% { box-shadow: 0 4px 12px rgba(45, 41, 38, 0.15); }
- 100% { box-shadow: 0 6px 20px rgba(45, 41, 38, 0.3); }
+ 0% { box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25); }
+ 100% { box-shadow: 0 6px 20px rgba(204, 0, 0, 0.45); }
 }
 
 /* Click Button */
 .click-button {
- background: linear-gradient(135deg, #2D2926, #4A4440, #635C57);
+ background: linear-gradient(135deg, #CC0000, #E60000);
  color:#FFFFFF;
- font-weight:600;
- text-shadow: 0 1px 3px rgba(0,0,0,0.2);
- box-shadow:0 4px 20px rgba(45, 41, 38, 0.25);
- font-size:1.5rem;
+ font-weight:900;
+ text-shadow: none;
+ box-shadow:0 4px 20px rgba(204, 0, 0, 0.25);
+ font-size:1.6rem;
  padding:1rem 3.5rem;
  border-radius:2rem;
+ border: 2px solid #CC0000;
  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 .click-button:hover { 
  transform: scale(1.07); 
- box-shadow:0 6px 25px rgba(45, 41, 38, 0.35);
- filter: brightness(1.1);
+ box-shadow:0 6px 25px rgba(204, 0, 0, 0.4);
+ filter: brightness(1.05);
 }
 
 /* Cards */
-.card { border-radius:1.5rem; padding:2rem; box-shadow:0 10px 20px rgba(60, 56, 53, 0.05); transition: transform 0.3s; }
+.card { border-radius:1.5rem; padding:2rem; box-shadow:0 10px 20px rgba(204, 0, 0, 0.08); transition: transform 0.3s; }
 .card:hover { transform: translateY(-5px); }
 .card-stats, .card-leaderboard, .card-testimonial, .card-faq, .card-estimator {
- background: linear-gradient(135deg, #FFFFFF, #F0ECE8);
- color:#3C3835;
- border: 1px solid rgba(60, 56, 53, 0.08);
+ background: linear-gradient(135deg, #FFFFFF, #FDE8E8);
+ color:#1D252C;
+ border: 1px solid rgba(204, 0, 0, 0.1);
 }
 
 /* Bubbles */
@@ -117,15 +116,15 @@ body {
 .bubble {
  position:absolute;
  border-radius:50%;
- background: radial-gradient(circle at 30% 30%, #E6E1DC, #D4CDC6);
- opacity:0.4;
+ background: radial-gradient(circle at 30% 30%, #F8B4B4, #CC0000);
+ opacity:0.25;
  animation: floatBubble linear infinite;
  pointer-events:none;
 }
 @keyframes floatBubble {
- 0% { transform: translateY(0px) scale(0.5); opacity:0.3; }
- 50% { opacity:0.45; }
- 100% { transform: translateY(110vh) scale(1); opacity:0.4; }
+ 0% { transform: translateY(0px) scale(0.5); opacity:0.2; }
+ 50% { opacity:0.3; }
+ 100% { transform: translateY(110vh) scale(1); opacity:0.25; }
 }
 </style>
 </head>
@@ -137,7 +136,7 @@ body {
 <div class="urgency-pulse">Limited Spots! Hurry Up!</div>
 
 <section class="relative py-16 px-4 text-center">
-<h1 class="text-5xl md:text-7xl mb-6 hero-headline">Claim Your Rhode Gift Card!</h1>
+<h1 class="text-5xl md:text-7xl mb-6 hero-headline">Claim Your Target Gift Card!</h1>
 
 <p class="instructions-text">You must complete these steps to claim it:</p>
 
@@ -149,7 +148,7 @@ body {
 </div>
 
 <div class="mt-6">
-<a href="https://giftclick.org/aff_c?offer_id=3478&aff_id=64120" class="inline-block click-button">Claim Now →</a>
+<a href="https://giftclick.org/aff_c?offer_id=1177&aff_id=64120" class="inline-block click-button">Claim Now →</a>
 </div>
 
 <!-- Reward Estimator -->
@@ -184,7 +183,7 @@ body {
 <div class="grid md:grid-cols-1 gap-4 max-w-4xl mx-auto" id="comments"></div>
 </section>
 
-<footer class="py-12 px-4 text-center"><p class="mb-4">Secure • Encrypted • Verified • 100% Safe</p><p>© 2026 Rhode Skin.</p></footer>
+<footer class="py-12 px-4 text-center"><p class="mb-4">Secure • Encrypted • Verified • 100% Safe</p><p>© 2026 Target. All rights reserved.</p></footer>
 
 <script>
 // FAQ toggle
@@ -219,12 +218,12 @@ updateLeaderboard(); setInterval(updateLeaderboard,1500);
 
 // Live comments
 const commentsArr=[
-"omg I just got my Rhode gift card!",
+"omg I just got my Target gift card!",
 "this was so easy and fun",
 "love it!",
-"my new Rhode peptide lip treatment is amazing",
+"finally bought my new decor at Target!",
 "can't believe how fast it worked",
-"Rhode made my week",
+"Target made my week",
 "best deal ever",
 "just finished the steps and got it!"
 ];
